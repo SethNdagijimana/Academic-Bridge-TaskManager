@@ -1,8 +1,9 @@
-import { ReactNode, useState } from "react"
+import { ReactNode, useEffect } from "react"
 
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
 
+import { useAppDispatch, useAppSelector } from "@/app/hooks"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,23 +11,46 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
-import { useTheme } from "@/lib/use-theme"
+import {
+  setLanguage,
+  setSidebarOpen,
+  toggleSidebar,
+  toggleTheme
+} from "@/features/ui/uiSlice"
 import { motion } from "framer-motion"
 import { Bell, Languages, Menu, Moon, Search, Sun } from "lucide-react"
-import { Sidebar } from "../SideBar"
+import { Sidebar } from "../Sidebar"
 
 interface AppLayoutProps {
   children: ReactNode
 }
 
 export default function AppLayout({ children }: AppLayoutProps) {
-  const { theme, toggleTheme } = useTheme()
+  const dispatch = useAppDispatch()
   const { i18n } = useTranslation()
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  const { theme, sidebarOpen, language } = useAppSelector((state) => state.ui)
+
+  useEffect(() => {
+    const root = document.documentElement
+    root.classList.remove("light", "dark")
+    root.classList.add(theme)
+  }, [theme])
+
+  useEffect(() => {
+    i18n.changeLanguage(language)
+  }, [language, i18n])
+
+  const handleLanguageChange = (lang: "en" | "fr") => {
+    dispatch(setLanguage(lang))
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex">
-      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <Sidebar
+        isOpen={sidebarOpen}
+        onClose={() => dispatch(setSidebarOpen(false))}
+      />
 
       <div className="flex-1 flex flex-col min-w-0">
         <header className="h-16 border-b sticky top-0 z-40 backdrop-blur-sm bg-white/95 dark:bg-slate-900/95">
@@ -36,7 +60,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
                 variant="ghost"
                 size="icon"
                 className="lg:hidden"
-                onClick={() => setSidebarOpen(!sidebarOpen)}
+                onClick={() => dispatch(toggleSidebar())}
               >
                 <Menu className="h-5 w-5" />
               </Button>
@@ -68,10 +92,10 @@ export default function AppLayout({ children }: AppLayoutProps) {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuItem onClick={() => i18n.changeLanguage("en")}>
+                  <DropdownMenuItem onClick={() => handleLanguageChange("en")}>
                     🇺🇸 English
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => i18n.changeLanguage("fr")}>
+                  <DropdownMenuItem onClick={() => handleLanguageChange("fr")}>
                     🇫🇷 Français
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -81,7 +105,11 @@ export default function AppLayout({ children }: AppLayoutProps) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button variant="ghost" size="icon" onClick={toggleTheme}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => dispatch(toggleTheme())}
+                >
                   <motion.div
                     initial={false}
                     animate={{ rotate: theme === "dark" ? 180 : 0 }}

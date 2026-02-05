@@ -1,3 +1,4 @@
+import { useAppDispatch, useAppSelector } from "@/app/hooks"
 import { KanbanColumn } from "@/components/KanbanColumn"
 import { TaskModal } from "@/components/TaskModal"
 import { Button } from "@/components/ui/button"
@@ -10,20 +11,22 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import { useTasks } from "@/features/tasks/hooks"
+import {
+  closeModal,
+  openModal,
+  togglePriorityFilter
+} from "@/features/tasks/tasksSlice"
 import { Task, TaskStatus } from "@/features/tasks/types"
 import { AnimatePresence, motion } from "framer-motion"
 import { Filter, Loader2, Plus, SlidersHorizontal, Users } from "lucide-react"
-import { useState } from "react"
 
 export default function KanbanPage() {
+  const dispatch = useAppDispatch()
   const { data: tasks = [], isLoading, error } = useTasks()
-  const [modalOpen, setModalOpen] = useState(false)
-  const [editingTask, setEditingTask] = useState<Task | undefined>()
-  const [defaultStatus, setDefaultStatus] = useState<TaskStatus | undefined>()
-  const [filters, setFilters] = useState({
-    priorities: [] as string[],
-    assignees: [] as string[]
-  })
+
+  const { isModalOpen, editingTask, defaultStatus, filters } = useAppSelector(
+    (state) => state.tasks
+  )
 
   const filteredTasks = tasks.filter((task) => {
     if (
@@ -31,6 +34,19 @@ export default function KanbanPage() {
       !filters.priorities.includes(task.priority)
     ) {
       return false
+    }
+    if (
+      filters.statuses.length > 0 &&
+      !filters.statuses.includes(task.status)
+    ) {
+      return false
+    }
+    if (filters.searchQuery) {
+      const query = filters.searchQuery.toLowerCase()
+      return (
+        task.title.toLowerCase().includes(query) ||
+        task.description?.toLowerCase().includes(query)
+      )
     }
     return true
   })
@@ -42,30 +58,19 @@ export default function KanbanPage() {
   }
 
   const handleAddTask = (status?: TaskStatus) => {
-    setDefaultStatus(status)
-    setEditingTask(undefined)
-    setModalOpen(true)
+    dispatch(openModal({ status }))
   }
 
   const handleEditTask = (task: Task) => {
-    setEditingTask(task)
-    setDefaultStatus(undefined)
-    setModalOpen(true)
+    dispatch(openModal({ task }))
   }
 
   const handleCloseModal = () => {
-    setModalOpen(false)
-    setEditingTask(undefined)
-    setDefaultStatus(undefined)
+    dispatch(closeModal())
   }
 
-  const togglePriorityFilter = (priority: string) => {
-    setFilters((prev) => ({
-      ...prev,
-      priorities: prev.priorities.includes(priority)
-        ? prev.priorities.filter((p) => p !== priority)
-        : [...prev.priorities, priority]
-    }))
+  const handleTogglePriorityFilter = (priority: "low" | "medium" | "high") => {
+    dispatch(togglePriorityFilter(priority))
   }
 
   if (isLoading) {
@@ -134,19 +139,19 @@ export default function KanbanPage() {
                 <DropdownMenuSeparator />
                 <DropdownMenuCheckboxItem
                   checked={filters.priorities.includes("high")}
-                  onCheckedChange={() => togglePriorityFilter("high")}
+                  onCheckedChange={() => handleTogglePriorityFilter("high")}
                 >
                   🔴 High Priority
                 </DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem
                   checked={filters.priorities.includes("medium")}
-                  onCheckedChange={() => togglePriorityFilter("medium")}
+                  onCheckedChange={() => handleTogglePriorityFilter("medium")}
                 >
                   🟡 Medium Priority
                 </DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem
                   checked={filters.priorities.includes("low")}
-                  onCheckedChange={() => togglePriorityFilter("low")}
+                  onCheckedChange={() => handleTogglePriorityFilter("low")}
                 >
                   🟢 Low Priority
                 </DropdownMenuCheckboxItem>
@@ -252,10 +257,10 @@ export default function KanbanPage() {
       </div>
 
       <TaskModal
-        open={modalOpen}
+        open={isModalOpen}
         onClose={handleCloseModal}
-        task={editingTask}
-        defaultStatus={defaultStatus}
+        task={editingTask || undefined}
+        defaultStatus={defaultStatus || undefined}
       />
     </div>
   )

@@ -1,9 +1,11 @@
 import tasksReducer from "@/features/tasks/tasksSlice"
+import uiReducer from "@/features/ui/uiSlice"
 import { configureStore } from "@reduxjs/toolkit"
 
 export const store = configureStore({
   reducer: {
-    tasks: tasksReducer
+    tasks: tasksReducer,
+    ui: uiReducer
   }
 })
 
