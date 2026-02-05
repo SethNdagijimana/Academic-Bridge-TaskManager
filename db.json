@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Design Kanban UI",
+      "description": "Create initial Kanban layout",
+      "status": "todo",
+      "priority": "medium"
+    },
+    {
+      "id": "2",
+      "title": "Setup API layer",
+      "description": "Connect frontend to JSON Server",
+      "status": "in-progress",
+      "priority": "high"
+    },
+    {
+      "id": "3",
+      "title": "Write",
+      "description": "Add unit and e2e tests",
+      "status": "done",
+      "priority": "low"
+    },
+    {
+      "id": "ab9c",
+      "title": "testing",
+      "description": "OKy",
+      "status": "todo",
+      "priority": "medium"
+    }
+  ]
+}
