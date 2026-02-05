@@ -20,6 +20,7 @@ import { useCreateTask, useUpdateTask } from "@/features/tasks/hooks"
 import { Task, TaskPriority, TaskStatus } from "@/features/tasks/types"
 import { useEffect } from "react"
 import { useForm } from "react-hook-form"
+import { useTranslation } from "react-i18next"
 
 interface TaskModalProps {
   open: boolean
@@ -43,6 +44,7 @@ export function TaskModal({
 }: TaskModalProps) {
   const createTask = useCreateTask()
   const updateTask = useUpdateTask()
+  const { t } = useTranslation()
 
   const {
     register,
@@ -98,21 +100,19 @@ export function TaskModal({
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-125">
         <DialogHeader>
-          <DialogTitle>{task ? "Edit Task" : "Create New Task"}</DialogTitle>
+          <DialogTitle> {task ? t("editTask") : t("createTask")}</DialogTitle>
           <DialogDescription>
-            {task
-              ? "Update the task details below."
-              : "Add a new task to your board."}
+            {task ? t("updateTask") : t("SubTitle")}
           </DialogDescription>
         </DialogHeader>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-4">
           <div>
-            <Label htmlFor="title">Title *</Label>
+            <Label htmlFor="title">{t("title")} *</Label>
             <Input
               id="title"
-              {...register("title", { required: "Title is required" })}
-              placeholder="Enter task title"
+              {...register("title", { required: t("titleRequired") })}
+              placeholder={t("enterTitle")}
               className="mt-1"
             />
             {errors.title && (
@@ -123,18 +123,18 @@ export function TaskModal({
           </div>
 
           <div>
-            <Label htmlFor="description">Description</Label>
+            <Label htmlFor="description">{t("description")}</Label>
             <Textarea
               id="description"
               {...register("description")}
-              placeholder="Enter task description (optional)"
+              placeholder={t("enterDescription")}
               className="mt-1 min-h-25"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="status">Status</Label>
+              <Label htmlFor="status">{t("status")}</Label>
               <Select
                 value={status}
                 onValueChange={(value) =>
@@ -145,15 +145,18 @@ export function TaskModal({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="todo">📋 To Do</SelectItem>
-                  <SelectItem value="in-progress">⚡ In Progress</SelectItem>
-                  <SelectItem value="done">✅ Done</SelectItem>
+                  <SelectItem value="todo">{t("todo")}</SelectItem>
+                  <SelectItem value="in-progress">
+                    {" "}
+                    {t("inProgress")}
+                  </SelectItem>
+                  <SelectItem value="done"> {t("done")}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div>
-              <Label htmlFor="priority">Priority</Label>
+              <Label htmlFor="priority">{t("priority")}</Label>
               <Select
                 value={priority}
                 onValueChange={(value) =>
@@ -164,9 +167,9 @@ export function TaskModal({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="low">Low</SelectItem>
-                  <SelectItem value="medium"> Medium</SelectItem>
-                  <SelectItem value="high">High</SelectItem>
+                  <SelectItem value="low">{t("low")}</SelectItem>
+                  <SelectItem value="medium">{t("medium")}</SelectItem>
+                  <SelectItem value="high">{t("high")}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -174,13 +177,13 @@ export function TaskModal({
 
           <div className="flex justify-end gap-2 pt-4">
             <Button type="button" variant="outline" onClick={onClose}>
-              Cancel
+              {t("cancel")}
             </Button>
             <Button
               type="submit"
               disabled={createTask.isPending || updateTask.isPending}
             >
-              {task ? "Update Task" : "Create Task"}
+              {task ? t("updateTask") : t("createTask")}
             </Button>
           </div>
         </form>

@@ -19,6 +19,7 @@ import {
 import { Task, TaskStatus } from "@/features/tasks/types"
 import { AnimatePresence, motion } from "framer-motion"
 import { Filter, Loader2, Plus, SlidersHorizontal, Users } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 export default function KanbanPage() {
   const dispatch = useAppDispatch()
@@ -27,6 +28,8 @@ export default function KanbanPage() {
   const { isModalOpen, editingTask, defaultStatus, filters } = useAppSelector(
     (state) => state.tasks
   )
+
+  const { t } = useTranslation()
 
   const filteredTasks = tasks.filter((task) => {
     if (
@@ -115,9 +118,9 @@ export default function KanbanPage() {
       >
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
           <div>
-            <p className="text-3xl font-bold mb-1">HR Tasks Hub </p>
+            <p className="text-3xl font-bold mb-1">{t("hrTasksHub")}</p>
             <p className="text-sm text-muted-foreground">
-              Track and manage your team's workflow
+              {t("trackWorkflow")}
             </p>
           </div>
 
@@ -126,7 +129,7 @@ export default function KanbanPage() {
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="gap-2">
                   <Filter className="h-4 w-4" />
-                  Filter
+                  {t("filter")}
                   {filters.priorities.length > 0 && (
                     <span className="ml-1 px-1.5 py-0.5 text-xs bg-primary text-primary-foreground rounded-full">
                       {filters.priorities.length}
@@ -135,37 +138,37 @@ export default function KanbanPage() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuLabel>Priority</DropdownMenuLabel>
+                <DropdownMenuLabel>{t("priority")}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuCheckboxItem
                   checked={filters.priorities.includes("high")}
                   onCheckedChange={() => handleTogglePriorityFilter("high")}
                 >
-                  🔴 High Priority
+                  {t("high")} {t("priority")}
                 </DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem
                   checked={filters.priorities.includes("medium")}
                   onCheckedChange={() => handleTogglePriorityFilter("medium")}
                 >
-                  🟡 Medium Priority
+                  {t("medium")} {t("priority")}
                 </DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem
                   checked={filters.priorities.includes("low")}
                   onCheckedChange={() => handleTogglePriorityFilter("low")}
                 >
-                  🟢 Low Priority
+                  {t("low")} {t("priority")}
                 </DropdownMenuCheckboxItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
             <Button variant="outline" size="sm" className="gap-2">
               <SlidersHorizontal className="h-4 w-4" />
-              View
+              {t("view")}
             </Button>
 
             <Button variant="outline" size="sm" className="gap-2">
               <Users className="h-4 w-4" />
-              Team
+              {t("team")}
             </Button>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -175,7 +178,7 @@ export default function KanbanPage() {
                 className="gap-2"
               >
                 <Plus className="h-4 w-4" />
-                Add Task
+                {t("addTask")}
               </Button>
             </motion.div>
           </div>
@@ -184,22 +187,22 @@ export default function KanbanPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             {
-              label: "Total Tasks",
+              label: t("totalTasks"),
               value: tasks.length,
               color: "from-blue-500 to-cyan-500"
             },
             {
-              label: "To Do",
+              label: t("todo"),
               value: tasksByStatus.todo.length,
               color: "from-slate-500 to-slate-600"
             },
             {
-              label: "In Progress",
+              label: t("inProgress"),
               value: tasksByStatus["in-progress"].length,
               color: "from-yellow-500 to-orange-500"
             },
             {
-              label: "Completed",
+              label: t("completed"),
               value: tasksByStatus.done.length,
               color: "from-green-500 to-emerald-500"
             }

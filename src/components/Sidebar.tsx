@@ -16,6 +16,7 @@ import {
   Sparkles,
   Users
 } from "lucide-react"
+import { useTranslation } from "react-i18next"
 import { Link, useLocation } from "react-router-dom"
 
 const navigation = [
@@ -46,6 +47,7 @@ interface SidebarProps {
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const location = useLocation()
+  const { t } = useTranslation()
 
   return (
     <>
@@ -62,18 +64,16 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         )}
       </AnimatePresence>
 
-      {/* Sidebar - Always visible on desktop, toggleable on mobile */}
       <aside
         className={cn(
           "fixed left-0 top-0 z-50 h-screen w-72 bg-white dark:bg-slate-950 border-r",
           "flex flex-col shadow-xl transition-transform duration-300",
-          // Mobile: slide in/out based on isOpen
+
           isOpen ? "translate-x-0" : "-translate-x-full",
-          // Desktop: always visible
+
           "lg:translate-x-0 lg:static lg:shadow-none"
         )}
       >
-        {/* Logo */}
         <div className="h-16 flex items-center px-6 border-b">
           <div className="flex items-center gap-2">
             <motion.div
@@ -118,7 +118,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           <div className="mb-6">
             <div className="flex items-center justify-between mb-3 px-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                Recent Pages
+                {t("recentPages")}
               </p>
             </div>
             <div className="space-y-1">
@@ -146,7 +146,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           <div>
             <div className="flex items-center justify-between mb-3 px-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                Recent Projects
+                {t("recentProjects")}
               </p>
             </div>
             <div className="space-y-1">
@@ -196,7 +196,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               </p>
               <Button
                 size="sm"
-                className="w-full bg-white text-purple-600 hover:bg-white/90 h-8"
+                className="w-full bg-white text-sky-600 hover:bg-white/90 h-8"
               >
                 Upgrade Now
               </Button>
