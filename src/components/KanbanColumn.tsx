@@ -40,7 +40,7 @@ export function KanbanColumn({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-xl">{statusEmojis[status]}</span>
-            <h2 className="font-semibold text-sm">{title}</h2>
+            <p className="font-semibold text-sm">{title}</p>
             <span className="text-xs bg-white dark:bg-slate-700 px-2 py-0.5 rounded-full">
               {count}
             </span>

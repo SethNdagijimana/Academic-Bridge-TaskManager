@@ -110,7 +110,7 @@ export default function KanbanPage() {
       >
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
           <div>
-            <h1 className="text-3xl font-bold mb-1">HR Tasks Hub 🎯</h1>
+            <p className="text-3xl font-bold mb-1">HR Tasks Hub </p>
             <p className="text-sm text-muted-foreground">
               Track and manage your team's workflow
             </p>

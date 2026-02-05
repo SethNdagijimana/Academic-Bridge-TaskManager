@@ -9,7 +9,10 @@
       "startDate": "2026-02-05",
       "dueDate": "2026-02-12",
       "progress": 0,
-      "tags": ["recruitment", "process"],
+      "tags": [
+        "recruitment",
+        "process"
+      ],
       "assignees": [
         {
           "id": 1,
@@ -50,7 +53,10 @@
       "startDate": "2026-02-01",
       "dueDate": "2026-02-08",
       "progress": 65,
-      "tags": ["onboarding", "documentation"],
+      "tags": [
+        "onboarding",
+        "documentation"
+      ],
       "assignees": [
         {
           "id": 3,
@@ -84,7 +90,10 @@
       "startDate": "2026-01-28",
       "dueDate": "2026-02-15",
       "progress": 40,
-      "tags": ["performance", "reviews"],
+      "tags": [
+        "performance",
+        "reviews"
+      ],
       "assignees": [
         {
           "id": 1,
@@ -125,7 +134,10 @@
       "startDate": "2026-01-20",
       "dueDate": "2026-02-01",
       "progress": 100,
-      "tags": ["benefits", "documentation"],
+      "tags": [
+        "benefits",
+        "documentation"
+      ],
       "assignees": [
         {
           "id": 5,
@@ -153,7 +165,10 @@
       "startDate": "2026-02-10",
       "dueDate": "2026-03-01",
       "progress": 0,
-      "tags": ["team-building", "events"],
+      "tags": [
+        "team-building",
+        "events"
+      ],
       "assignees": [
         {
           "id": 2,
@@ -180,7 +195,10 @@
       "startDate": "2026-01-15",
       "dueDate": "2026-02-28",
       "progress": 55,
-      "tags": ["training", "diversity"],
+      "tags": [
+        "training",
+        "diversity"
+      ],
       "assignees": [
         {
           "id": 4,
@@ -215,7 +233,10 @@
       "startDate": "2026-01-10",
       "dueDate": "2026-01-31",
       "progress": 100,
-      "tags": ["compensation", "research"],
+      "tags": [
+        "compensation",
+        "research"
+      ],
       "assignees": [
         {
           "id": 1,
@@ -250,7 +271,10 @@
       "startDate": "2026-02-15",
       "dueDate": "2026-03-15",
       "progress": 0,
-      "tags": ["policy", "remote-work"],
+      "tags": [
+        "policy",
+        "remote-work"
+      ],
       "assignees": [
         {
           "id": 5,
