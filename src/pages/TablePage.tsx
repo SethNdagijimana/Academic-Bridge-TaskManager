@@ -63,7 +63,7 @@ export default function TablePage() {
     dispatch(openModal({ task }))
   }
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     if (confirm("Are you sure you want to delete this task?")) {
       deleteTask.mutate(id)
     }

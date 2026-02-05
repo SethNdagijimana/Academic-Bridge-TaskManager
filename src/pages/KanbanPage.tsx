@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from "@/app/hooks"
 import { KanbanColumn } from "@/components/KanbanColumn"
+import { TaskCard } from "@/components/TaskCard"
 import { TaskModal } from "@/components/TaskModal"
 import { Button } from "@/components/ui/button"
 import {
@@ -10,26 +11,47 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { useTasks } from "@/features/tasks/hooks"
+import { useTasks, useUpdateTask } from "@/features/tasks/hooks"
 import {
   closeModal,
   openModal,
   togglePriorityFilter
 } from "@/features/tasks/tasksSlice"
 import { Task, TaskStatus } from "@/features/tasks/types"
-import { AnimatePresence, motion } from "framer-motion"
+import {
+  DndContext,
+  DragEndEvent,
+  DragOverlay,
+  DragStartEvent,
+  PointerSensor,
+  closestCorners,
+  useSensor,
+  useSensors
+} from "@dnd-kit/core"
+import { motion } from "framer-motion"
 import { Filter, Loader2, Plus, SlidersHorizontal, Users } from "lucide-react"
+import { useState } from "react"
 import { useTranslation } from "react-i18next"
 
 export default function KanbanPage() {
   const dispatch = useAppDispatch()
   const { data: tasks = [], isLoading, error } = useTasks()
+  const updateTask = useUpdateTask()
+  const [activeTask, setActiveTask] = useState<Task | null>(null)
 
   const { isModalOpen, editingTask, defaultStatus, filters } = useAppSelector(
     (state) => state.tasks
   )
 
   const { t } = useTranslation()
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8
+      }
+    })
+  )
 
   const filteredTasks = tasks.filter((task) => {
     if (
@@ -74,6 +96,42 @@ export default function KanbanPage() {
 
   const handleTogglePriorityFilter = (priority: "low" | "medium" | "high") => {
     dispatch(togglePriorityFilter(priority))
+  }
+
+  const handleDragStart = (event: DragStartEvent) => {
+    const { active } = event
+    const task = tasks.find((t) => t.id === active.id)
+    setActiveTask(task || null)
+  }
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event
+    setActiveTask(null)
+
+    if (!over) return
+
+    const taskId = String(active.id)
+    const task = tasks.find((t) => t.id === taskId)
+
+    if (!task) {
+      console.error("Task not found:", taskId)
+      return
+    }
+
+    const newStatus = String(over.id) as TaskStatus
+
+    if (!["todo", "in-progress", "done"].includes(newStatus)) {
+      console.error("Invalid status:", newStatus)
+      return
+    }
+
+    if (task.status !== newStatus) {
+      console.log("Updating task", taskId, "from", task.status, "to", newStatus)
+      updateTask.mutate({
+        ...task,
+        status: newStatus
+      })
+    }
   }
 
   if (isLoading) {
@@ -226,8 +284,13 @@ export default function KanbanPage() {
       </motion.div>
 
       <div className="flex-1 overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
-          <AnimatePresence mode="wait">
+        <DndContext
+          sensors={sensors}
+          collisionDetection={closestCorners}
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
             <KanbanColumn
               key="todo"
               status="todo"
@@ -255,8 +318,16 @@ export default function KanbanPage() {
               onAddTask={() => handleAddTask("done")}
               onEditTask={handleEditTask}
             />
-          </AnimatePresence>
-        </div>
+          </div>
+
+          <DragOverlay>
+            {activeTask ? (
+              <div className="rotate-3 cursor-grabbing">
+                <TaskCard task={activeTask} isDragging />
+              </div>
+            ) : null}
+          </DragOverlay>
+        </DndContext>
       </div>
 
       <TaskModal

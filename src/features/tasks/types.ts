@@ -23,7 +23,7 @@ export interface TaskAssignee {
 }
 
 export interface Task {
-  id: number
+  id: string
   title: string
   description?: string
   status: TaskStatus
@@ -33,6 +33,6 @@ export interface Task {
   assignees?: TaskAssignee[]
   comments?: TaskComment[]
   attachments?: TaskAttachment[]
-  progress?: number // 0-100
+  progress?: number
   tags?: string[]
 }

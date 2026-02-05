@@ -1,7 +1,7 @@
 {
   "tasks": [
     {
-      "id": 1,
+      "id": "a1b2",
       "title": "Review and Update Recruitment Process",
       "description": "Analyze current recruitment workflow and suggest improvements for better candidate experience",
       "status": "todo",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "c3d4",
       "title": "Employee Onboarding Documentation",
       "description": "Create comprehensive onboarding guide for new hires including company policies and procedures",
       "status": "in-progress",
@@ -82,7 +82,7 @@
       "attachments": []
     },
     {
-      "id": 3,
+      "id": "e5f6",
       "title": "Q1 Performance Reviews",
       "description": "Schedule and conduct quarterly performance reviews for all team members",
       "status": "in-progress",
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "g7h8",
       "title": "Update Benefits Package Information",
       "description": "Revise employee benefits documentation with new healthcare options",
       "status": "done",
@@ -157,10 +157,10 @@
       ]
     },
     {
-      "id": 5,
+      "id": "i9j0",
       "title": "Team Building Event Planning",
       "description": "Organize Q1 team building activities and book venue",
-      "status": "todo",
+      "status": "in-progress",
       "priority": "medium",
       "startDate": "2026-02-10",
       "dueDate": "2026-03-01",
@@ -187,10 +187,10 @@
       "attachments": []
     },
     {
-      "id": 6,
+      "id": "k1l2",
       "title": "Diversity Training Module",
       "description": "Develop and implement diversity and inclusion training for all staff",
-      "status": "in-progress",
+      "status": "done",
       "priority": "high",
       "startDate": "2026-01-15",
       "dueDate": "2026-02-28",
@@ -225,7 +225,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "m3n4",
       "title": "Salary Benchmarking Analysis",
       "description": "Conduct market research on competitive salaries for key positions",
       "status": "done",
@@ -263,7 +263,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "o5p6",
       "title": "Remote Work Policy Update",
       "description": "Review and update remote work guidelines based on team feedback",
       "status": "todo",

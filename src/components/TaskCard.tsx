@@ -68,21 +68,10 @@ export function TaskCard({ task, onEdit, isDragging }: TaskCardProps) {
   }
 
   return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, scale: 0.9, y: 20 }}
-      animate={{
-        opacity: isDragging ? 0.5 : 1,
-        scale: isDragging ? 1.05 : 1,
-        y: 0
-      }}
-      exit={{ opacity: 0, scale: 0.9, y: -20 }}
-      whileHover={{ scale: 1.02, y: -4 }}
-      transition={{
-        duration: 0.2,
-        type: "spring",
-        stiffness: 300,
-        damping: 20
+    <div
+      style={{
+        opacity: isDragging ? 0.8 : 1,
+        transform: isDragging ? "rotate(2deg)" : "rotate(0deg)"
       }}
       className="cursor-grab active:cursor-grabbing"
     >
@@ -229,6 +218,6 @@ export function TaskCard({ task, onEdit, isDragging }: TaskCardProps) {
           )}
         </div>
       </Card>
-    </motion.div>
+    </div>
   )
 }

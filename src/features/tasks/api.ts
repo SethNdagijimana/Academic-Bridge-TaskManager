@@ -1,11 +1,26 @@
-import { Task } from "./types"
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Task, TaskStatus } from "./types"
 
 const API_URL = "http://localhost:4000/tasks"
 
 export async function fetchTasks(): Promise<Task[]> {
   const res = await fetch(API_URL)
   if (!res.ok) throw new Error("Failed to fetch tasks")
-  return res.json()
+  const data = await res.json()
+
+  const tasks = Array.isArray(data) ? data : data.tasks || []
+
+  return tasks.map((task: any) => {
+    let status = task.status as string
+
+    // Convert old numeric seed data to proper format
+    if (status === "2") status = "todo"
+    else if (status === "5" || status === "6" || status === "7")
+      status = "in-progress"
+    else if (status === "8") status = "done"
+
+    return { ...task, status: status as TaskStatus }
+  })
 }
 
 export async function createTask(task: Omit<Task, "id">): Promise<Task> {
@@ -25,10 +40,19 @@ export async function updateTask(task: Task): Promise<Task> {
     body: JSON.stringify(task)
   })
   if (!res.ok) throw new Error("Failed to update task")
-  return res.json()
+  const updated = await res.json()
+
+  // Normalize the response
+  let status = updated.status as string
+  if (status === "2") status = "todo"
+  else if (status === "5" || status === "6" || status === "7")
+    status = "in-progress"
+  else if (status === "8") status = "done"
+
+  return { ...updated, status: status as TaskStatus }
 }
 
-export async function deleteTask(id: number): Promise<void> {
+export async function deleteTask(id: string): Promise<void> {
   const res = await fetch(`${API_URL}/${id}`, {
     method: "DELETE"
   })

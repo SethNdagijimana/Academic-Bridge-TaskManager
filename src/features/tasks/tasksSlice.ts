@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { Task, TaskPriority, TaskStatus } from "./types"
 
 interface TasksState {
-  selectedTaskId: number | null
+  selectedTaskId: string | null
   isModalOpen: boolean
   editingTask: Task | null
   defaultStatus: TaskStatus | null
@@ -12,6 +12,8 @@ interface TasksState {
     statuses: TaskStatus[]
     searchQuery: string
   }
+
+  draggedTaskId: string | null
 }
 
 const initialState: TasksState = {
@@ -23,7 +25,8 @@ const initialState: TasksState = {
     priorities: [],
     statuses: [],
     searchQuery: ""
-  }
+  },
+  draggedTaskId: null
 }
 
 const tasksSlice = createSlice({
@@ -62,11 +65,19 @@ const tasksSlice = createSlice({
       state.filters.searchQuery = action.payload
     },
     clearFilters: (state) => {
-      state.filters = initialState.filters
+      state.filters = {
+        priorities: [],
+        statuses: [],
+        searchQuery: ""
+      }
     },
 
-    selectTask: (state, action: PayloadAction<number | null>) => {
+    selectTask: (state, action: PayloadAction<string | null>) => {
       state.selectedTaskId = action.payload
+    },
+
+    setDraggedTask: (state, action: PayloadAction<string | null>) => {
+      state.draggedTaskId = action.payload
     }
   }
 })
@@ -79,7 +90,8 @@ export const {
   setStatusFilter,
   setSearchQuery,
   clearFilters,
-  selectTask
+  selectTask,
+  setDraggedTask
 } = tasksSlice.actions
 
 export default tasksSlice.reducer
