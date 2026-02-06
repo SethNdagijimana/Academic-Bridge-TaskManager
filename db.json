@@ -225,44 +225,6 @@
       ]
     },
     {
-      "id": "m3n4",
-      "title": "Salary Benchmarking Analysis",
-      "description": "Conduct market research on competitive salaries for key positions",
-      "status": "in-progress",
-      "priority": "medium",
-      "startDate": "2026-01-10",
-      "dueDate": "2026-01-31",
-      "progress": 100,
-      "tags": [
-        "compensation",
-        "research"
-      ],
-      "assignees": [
-        {
-          "id": 1,
-          "name": "Sarah Chen",
-          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
-          "color": "bg-blue-500"
-        }
-      ],
-      "comments": [
-        {
-          "id": 1,
-          "text": "Report submitted to leadership",
-          "author": "Sarah Chen",
-          "createdAt": "2026-01-31T17:00:00Z"
-        }
-      ],
-      "attachments": [
-        {
-          "id": 1,
-          "name": "salary_report.xlsx",
-          "url": "#",
-          "type": "xlsx"
-        }
-      ]
-    },
-    {
       "id": "o5p6",
       "title": "Remote Work Policy Update",
       "description": "Review and update remote work guidelines based on team feedback",
@@ -285,16 +247,6 @@
       ],
       "comments": [],
       "attachments": []
-    },
-    {
-      "id": "83b9",
-      "title": "Testing Progress task",
-      "description": "Progress task",
-      "status": "in-progress",
-      "priority": "medium",
-      "progress": 30,
-      "startDate": "2026-02-06T22:00:00.000Z",
-      "dueDate": "2026-02-08T22:00:00.000Z"
     },
     {
       "id": "12b9",
