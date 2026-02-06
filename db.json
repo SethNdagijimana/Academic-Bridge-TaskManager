@@ -285,6 +285,16 @@
       ],
       "comments": [],
       "attachments": []
+    },
+    {
+      "id": "83b9",
+      "title": "Testing Progress task",
+      "description": "Progress task",
+      "status": "in-progress",
+      "priority": "medium",
+      "progress": 30,
+      "startDate": "2026-02-06T22:00:00.000Z",
+      "dueDate": "2026-02-08T22:00:00.000Z"
     }
   ]
 }
