@@ -56,3 +56,37 @@ export async function deleteTask(id: string): Promise<void> {
   })
   if (!res.ok) throw new Error("Failed to delete task")
 }
+
+export async function addComment(
+  taskId: string,
+  text: string,
+  author: string
+): Promise<Task> {
+  // fetch the task
+  const taskRes = await fetch(`${API_URL}/${taskId}`)
+  if (!taskRes.ok) throw new Error("Failed to fetch task")
+  const task = await taskRes.json()
+
+  // Add the new comment
+  const newComment = {
+    id: Date.now(),
+    text,
+    author,
+    createdAt: new Date().toISOString()
+  }
+
+  const updatedTask = {
+    ...task,
+    comments: [...(task.comments || []), newComment]
+  }
+
+  // Update the task with the new comment
+  const res = await fetch(`${API_URL}/${taskId}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedTask)
+  })
+
+  if (!res.ok) throw new Error("Failed to add comment")
+  return res.json()
+}

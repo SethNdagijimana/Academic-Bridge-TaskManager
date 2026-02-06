@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label"
 import { Progress } from "@/components/ui/progress"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
+import { useAddComment } from "@/features/tasks/hooks"
 
 import { Task } from "@/features/tasks/types"
 import { formatDistanceToNow } from "date-fns"
@@ -59,14 +60,24 @@ export function TaskDetailsModal({
   onDelete
 }: TaskDetailsModalProps) {
   const [newComment, setNewComment] = useState("")
+  const addComment = useAddComment()
 
   if (!task) return null
 
   const handleAddComment = () => {
     if (newComment.trim()) {
-      // TODO: Implement add comment API call
-      console.log("Adding comment:", newComment)
-      setNewComment("")
+      addComment.mutate(
+        {
+          taskId: task.id,
+          text: newComment,
+          author: "Seth N."
+        },
+        {
+          onSuccess: () => {
+            setNewComment("")
+          }
+        }
+      )
     }
   }
 

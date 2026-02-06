@@ -1,5 +1,11 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { createTask, deleteTask, fetchTasks, updateTask } from "./api"
+import {
+  addComment,
+  createTask,
+  deleteTask,
+  fetchTasks,
+  updateTask
+} from "./api"
 import { Task } from "./types"
 
 export function useTasks() {
@@ -55,6 +61,25 @@ export function useDeleteTask() {
 
   return useMutation({
     mutationFn: deleteTask,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["tasks"] })
+    }
+  })
+}
+
+export function useAddComment() {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: ({
+      taskId,
+      text,
+      author
+    }: {
+      taskId: string
+      text: string
+      author: string
+    }) => addComment(taskId, text, author),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["tasks"] })
     }
