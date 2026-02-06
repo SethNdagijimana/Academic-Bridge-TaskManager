@@ -79,7 +79,7 @@ export function TaskDetailsModal({
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-3xl max-h-[90vh] p-0">
+      <DialogContent className="max-w-3xl max-h-[95vh] p-0">
         <DialogHeader className="px-6 pt-6 pb-4 border-b">
           <div className="flex items-start justify-between">
             <div className="flex-1">

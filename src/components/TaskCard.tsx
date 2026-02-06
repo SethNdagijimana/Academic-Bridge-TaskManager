@@ -74,6 +74,7 @@ export function TaskCard({ task, onEdit, isDragging }: TaskCardProps) {
         transform: isDragging ? "rotate(2deg)" : "rotate(0deg)"
       }}
       className="cursor-grab active:cursor-grabbing"
+      onClick={() => !isDragging && onEdit?.(task)}
     >
       <Card
         className={`p-4 hover:shadow-2xl transition-all duration-300 group relative overflow-hidden border-l-4 ${priorityColors[task.priority]}`}

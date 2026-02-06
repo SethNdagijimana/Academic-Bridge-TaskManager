@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from "@/app/hooks"
 import { KanbanColumn } from "@/components/KanbanColumn"
 import { TaskCard } from "@/components/TaskCard"
+import { TaskDetailsModal } from "@/components/TaskDetailsModal"
 import { TaskModal } from "@/components/TaskModal"
 import { Button } from "@/components/ui/button"
 import {
@@ -11,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { useTasks, useUpdateTask } from "@/features/tasks/hooks"
+import { useDeleteTask, useTasks, useUpdateTask } from "@/features/tasks/hooks"
 import {
   closeModal,
   openModal,
@@ -38,17 +39,16 @@ export default function KanbanPage() {
   const dispatch = useAppDispatch()
   const { data: tasks = [], isLoading, error } = useTasks()
   const updateTask = useUpdateTask()
+  const deleteTask = useDeleteTask()
   const [activeTask, setActiveTask] = useState<Task | null>(null)
+  const [selectedTask, setSelectedTask] = useState<Task | null>(null)
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false)
 
   const { isModalOpen, editingTask, defaultStatus, filters } = useAppSelector(
     (state) => state.tasks
   )
 
   const { t } = useTranslation()
-
-  const handleToggleStatusFilter = (status: TaskStatus) => {
-    dispatch(toggleStatusFilter(status))
-  }
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -95,12 +95,21 @@ export default function KanbanPage() {
     dispatch(openModal({ task }))
   }
 
+  const handleViewTask = (task: Task) => {
+    setSelectedTask(task)
+    setIsDetailsOpen(true)
+  }
+
   const handleCloseModal = () => {
     dispatch(closeModal())
   }
 
   const handleTogglePriorityFilter = (priority: "low" | "medium" | "high") => {
     dispatch(togglePriorityFilter(priority))
+  }
+
+  const handleToggleStatusFilter = (status: TaskStatus) => {
+    dispatch(toggleStatusFilter(status))
   }
 
   const handleDragStart = (event: DragStartEvent) => {
@@ -344,7 +353,7 @@ export default function KanbanPage() {
               tasks={tasksByStatus.todo}
               count={tasksByStatus.todo.length}
               onAddTask={() => handleAddTask("todo")}
-              onEditTask={handleEditTask}
+              onEditTask={handleViewTask}
             />
             <KanbanColumn
               key="in-progress"
@@ -353,7 +362,7 @@ export default function KanbanPage() {
               tasks={tasksByStatus["in-progress"]}
               count={tasksByStatus["in-progress"].length}
               onAddTask={() => handleAddTask("in-progress")}
-              onEditTask={handleEditTask}
+              onEditTask={handleViewTask}
             />
             <KanbanColumn
               key="done"
@@ -362,7 +371,7 @@ export default function KanbanPage() {
               tasks={tasksByStatus.done}
               count={tasksByStatus.done.length}
               onAddTask={() => handleAddTask("done")}
-              onEditTask={handleEditTask}
+              onEditTask={handleViewTask}
             />
           </div>
 
@@ -381,6 +390,19 @@ export default function KanbanPage() {
         onClose={handleCloseModal}
         task={editingTask || undefined}
         defaultStatus={defaultStatus || undefined}
+      />
+
+      <TaskDetailsModal
+        task={selectedTask}
+        open={isDetailsOpen}
+        onClose={() => setIsDetailsOpen(false)}
+        onEdit={(task) => {
+          setIsDetailsOpen(false)
+          handleEditTask(task)
+        }}
+        onDelete={(id) => {
+          deleteTask.mutate(id)
+        }}
       />
     </div>
   )
