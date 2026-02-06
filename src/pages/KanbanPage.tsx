@@ -15,7 +15,8 @@ import { useTasks, useUpdateTask } from "@/features/tasks/hooks"
 import {
   closeModal,
   openModal,
-  togglePriorityFilter
+  togglePriorityFilter,
+  toggleStatusFilter
 } from "@/features/tasks/tasksSlice"
 import { Task, TaskStatus } from "@/features/tasks/types"
 import {
@@ -44,6 +45,10 @@ export default function KanbanPage() {
   )
 
   const { t } = useTranslation()
+
+  const handleToggleStatusFilter = (status: TaskStatus) => {
+    dispatch(toggleStatusFilter(status))
+  }
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -118,21 +123,17 @@ export default function KanbanPage() {
       return
     }
 
-    // Determine the new status
     let newStatus: TaskStatus | null = null
 
-    // Check if we dropped over a column
     if (over.data?.current?.type === "column") {
       newStatus = over.data.current.status as TaskStatus
     } else {
-      // If we dropped over another task, find which column it belongs to
       const overTask = tasks.find((t) => t.id === over.id)
       if (overTask) {
         newStatus = overTask.status
       }
     }
 
-    // If we still don't have a status, check if over.id is a valid status
     if (
       !newStatus &&
       ["todo", "in-progress", "done"].includes(String(over.id))
@@ -145,7 +146,6 @@ export default function KanbanPage() {
       return
     }
 
-    // Only update if status changed
     if (task.status !== newStatus) {
       console.log("Updating task", taskId, "from", task.status, "to", newStatus)
       updateTask.mutate({
@@ -209,9 +209,10 @@ export default function KanbanPage() {
                 <Button variant="outline" size="sm" className="gap-2">
                   <Filter className="h-4 w-4" />
                   {t("filter")}
-                  {filters.priorities.length > 0 && (
+                  {(filters.priorities.length > 0 ||
+                    filters.statuses.length > 0) && (
                     <span className="ml-1 px-1.5 py-0.5 text-xs bg-primary text-primary-foreground rounded-full">
-                      {filters.priorities.length}
+                      {filters.priorities.length + filters.statuses.length}
                     </span>
                   )}
                 </Button>
@@ -236,6 +237,30 @@ export default function KanbanPage() {
                   onCheckedChange={() => handleTogglePriorityFilter("low")}
                 >
                   {t("low")} {t("priority")}
+                </DropdownMenuCheckboxItem>
+
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel>Status</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuCheckboxItem
+                  checked={filters.statuses.includes("todo")}
+                  onCheckedChange={() => handleToggleStatusFilter("todo")}
+                >
+                  📋 To Do
+                </DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem
+                  checked={filters.statuses.includes("in-progress")}
+                  onCheckedChange={() =>
+                    handleToggleStatusFilter("in-progress")
+                  }
+                >
+                  ⚡ In Progress
+                </DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem
+                  checked={filters.statuses.includes("done")}
+                  onCheckedChange={() => handleToggleStatusFilter("done")}
+                >
+                  ✅ Done
                 </DropdownMenuCheckboxItem>
               </DropdownMenuContent>
             </DropdownMenu>

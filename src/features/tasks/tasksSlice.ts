@@ -78,6 +78,15 @@ const tasksSlice = createSlice({
 
     setDraggedTask: (state, action: PayloadAction<string | null>) => {
       state.draggedTaskId = action.payload
+    },
+
+    toggleStatusFilter: (state, action: PayloadAction<TaskStatus>) => {
+      const index = state.filters.statuses.indexOf(action.payload)
+      if (index > -1) {
+        state.filters.statuses.splice(index, 1)
+      } else {
+        state.filters.statuses.push(action.payload)
+      }
     }
   }
 })
@@ -91,7 +100,8 @@ export const {
   setSearchQuery,
   clearFilters,
   selectTask,
-  setDraggedTask
+  setDraggedTask,
+  toggleStatusFilter
 } = tasksSlice.actions
 
 export default tasksSlice.reducer
