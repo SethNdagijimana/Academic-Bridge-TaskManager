@@ -1,7 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Task, TaskStatus } from "@/features/tasks/types"
-import { AnimatePresence, motion } from "framer-motion"
+import { useDroppable } from "@dnd-kit/core"
+import {
+  SortableContext,
+  useSortable,
+  verticalListSortingStrategy
+} from "@dnd-kit/sortable"
+import { CSS } from "@dnd-kit/utilities"
+import { motion } from "framer-motion"
 import { Plus } from "lucide-react"
 import { TaskCard } from "./TaskCard"
 
@@ -26,6 +33,35 @@ const statusEmojis = {
   done: "✅"
 }
 
+function SortableTaskCard({
+  task,
+  onEdit
+}: {
+  task: Task
+  onEdit: (task: Task) => void
+}) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging
+  } = useSortable({ id: task.id })
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1
+  }
+
+  return (
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+      <TaskCard task={task} onEdit={onEdit} isDragging={isDragging} />
+    </div>
+  )
+}
+
 export function KanbanColumn({
   status,
   title,
@@ -34,13 +70,23 @@ export function KanbanColumn({
   onEditTask,
   count
 }: KanbanColumnProps) {
+  const { setNodeRef, isOver } = useDroppable({
+    id: status,
+    data: {
+      type: "column",
+      status: status
+    }
+  })
+
+  const taskIds = tasks.map((task) => task.id)
+
   return (
     <div className="flex flex-col h-full">
       <div className={`${statusColors[status]} rounded-lg p-3 mb-3`}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-xl">{statusEmojis[status]}</span>
-            <h2 className="font-semibold text-sm">{title}</h2>
+            <p className="font-semibold text-sm">{title}</p>
             <span className="text-xs bg-white dark:bg-slate-700 px-2 py-0.5 rounded-full">
               {count}
             </span>
@@ -56,34 +102,41 @@ export function KanbanColumn({
         </div>
       </div>
 
-      <div className="flex-1 space-y-3 overflow-y-auto pr-1">
-        <AnimatePresence mode="popLayout">
+      <SortableContext items={taskIds} strategy={verticalListSortingStrategy}>
+        <div
+          ref={setNodeRef}
+          className={`flex-1 space-y-3 overflow-y-auto pr-1 transition-colors rounded-lg p-2 ${
+            isOver
+              ? "bg-sky-50 dark:bg-sky-900/10 border-2 border-dashed border-sky-300 dark:border-sky-700"
+              : ""
+          }`}
+        >
           {tasks.map((task) => (
-            <TaskCard key={task.id} task={task} onEdit={onEditTask} />
+            <SortableTaskCard key={task.id} task={task} onEdit={onEditTask} />
           ))}
-        </AnimatePresence>
 
-        {tasks.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-8"
-          >
-            <Card className="p-6 border-dashed">
-              <p className="text-sm text-muted-foreground">No tasks yet</p>
-              <Button
-                variant="link"
-                size="sm"
-                onClick={onAddTask}
-                className="mt-2"
-              >
-                <Plus className="h-4 w-4 mr-1" />
-                Add task
-              </Button>
-            </Card>
-          </motion.div>
-        )}
-      </div>
+          {tasks.length === 0 && !isOver && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-8"
+            >
+              <Card className="p-6 border-dashed">
+                <p className="text-sm text-muted-foreground">No tasks yet</p>
+                <Button
+                  variant="link"
+                  size="sm"
+                  onClick={onAddTask}
+                  className="mt-2"
+                >
+                  <Plus className="h-4 w-4 mr-1" />
+                  Add task
+                </Button>
+              </Card>
+            </motion.div>
+          )}
+        </div>
+      </SortableContext>
     </div>
   )
 }

@@ -1,3 +1,4 @@
+import { useAppDispatch, useAppSelector } from "@/app/hooks"
 import { TaskModal } from "@/components/TaskModal"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -24,24 +25,34 @@ import {
   TableRow
 } from "@/components/ui/table"
 import { useDeleteTask, useTasks } from "@/features/tasks/hooks"
+import {
+  closeModal,
+  openModal,
+  setSearchQuery
+} from "@/features/tasks/tasksSlice"
 import { Task } from "@/features/tasks/types"
 import { motion } from "framer-motion"
 import { Edit, Loader2, MoreVertical, Plus, Search, Trash2 } from "lucide-react"
 import { useState } from "react"
 
 export default function TablePage() {
+  const dispatch = useAppDispatch()
   const { data: tasks = [], isLoading, error } = useTasks()
   const deleteTask = useDeleteTask()
-  const [modalOpen, setModalOpen] = useState(false)
-  const [editingTask, setEditingTask] = useState<Task | undefined>()
-  const [searchQuery, setSearchQuery] = useState("")
+
+  const { isModalOpen, editingTask, filters } = useAppSelector(
+    (state) => state.tasks
+  )
+
   const [statusFilter, setStatusFilter] = useState<string>("all")
   const [priorityFilter, setPriorityFilter] = useState<string>("all")
 
   const filteredTasks = tasks.filter((task) => {
     const matchesSearch =
-      task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      task.description?.toLowerCase().includes(searchQuery.toLowerCase())
+      task.title.toLowerCase().includes(filters.searchQuery.toLowerCase()) ||
+      task.description
+        ?.toLowerCase()
+        .includes(filters.searchQuery.toLowerCase())
     const matchesStatus = statusFilter === "all" || task.status === statusFilter
     const matchesPriority =
       priorityFilter === "all" || task.priority === priorityFilter
@@ -49,19 +60,21 @@ export default function TablePage() {
   })
 
   const handleEdit = (task: Task) => {
-    setEditingTask(task)
-    setModalOpen(true)
+    dispatch(openModal({ task }))
   }
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     if (confirm("Are you sure you want to delete this task?")) {
       deleteTask.mutate(id)
     }
   }
 
   const handleCloseModal = () => {
-    setModalOpen(false)
-    setEditingTask(undefined)
+    dispatch(closeModal())
+  }
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchQuery(e.target.value))
   }
 
   const priorityColors = {
@@ -96,35 +109,33 @@ export default function TablePage() {
   }
 
   return (
-    <div className="space-y-6">
-      {/* Header */}
+    <div className="space-y-6 p-6">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h1 className="text-3xl font-bold bg-linear-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold bg-linear-to-r from-primary to-sky-800 bg-clip-text text-transparent">
               Task List
             </h1>
             <p className="text-sm text-muted-foreground mt-1">
               View all tasks in table format
             </p>
           </div>
-          <Button onClick={() => setModalOpen(true)} size="lg">
+          <Button onClick={() => dispatch(openModal({}))} size="lg">
             <Plus className="h-4 w-4 mr-2" />
             New Task
           </Button>
         </div>
 
-        {/* Filters */}
         <div className="flex flex-col md:flex-row gap-4">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder="Search tasks..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              value={filters.searchQuery}
+              onChange={handleSearchChange}
               className="pl-10"
             />
           </div>
@@ -153,7 +164,6 @@ export default function TablePage() {
         </div>
       </motion.div>
 
-      {/* Table */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -180,7 +190,7 @@ export default function TablePage() {
                   <p className="text-muted-foreground">No tasks found</p>
                   <Button
                     variant="link"
-                    onClick={() => setModalOpen(true)}
+                    onClick={() => dispatch(openModal({}))}
                     className="mt-2"
                   >
                     Create your first task
@@ -234,11 +244,10 @@ export default function TablePage() {
         </Table>
       </motion.div>
 
-      {/* Task Modal */}
       <TaskModal
-        open={modalOpen}
+        open={isModalOpen}
         onClose={handleCloseModal}
-        task={editingTask}
+        task={editingTask || undefined}
       />
     </div>
   )
