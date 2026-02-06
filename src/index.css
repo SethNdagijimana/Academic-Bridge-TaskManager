@@ -196,3 +196,26 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.rdp {
+  --rdp-cell-size: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rdp-months {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rdp-month {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rdp-table {
+  flex: 1;
+}

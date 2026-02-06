@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Task, TaskStatus } from "./types"
 
-const API_URL = "http://localhost:4000/tasks"
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000"
+const TASKS_ENDPOINT = `${API_URL}/tasks`
 
 export async function fetchTasks(): Promise<Task[]> {
-  const res = await fetch(API_URL)
+  const res = await fetch(TASKS_ENDPOINT)
   if (!res.ok) throw new Error("Failed to fetch tasks")
   const data = await res.json()
 
@@ -23,7 +24,7 @@ export async function fetchTasks(): Promise<Task[]> {
 }
 
 export async function createTask(task: Omit<Task, "id">): Promise<Task> {
-  const res = await fetch(API_URL, {
+  const res = await fetch(TASKS_ENDPOINT, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(task)
@@ -33,7 +34,7 @@ export async function createTask(task: Omit<Task, "id">): Promise<Task> {
 }
 
 export async function updateTask(task: Task): Promise<Task> {
-  const res = await fetch(`${API_URL}/${task.id}`, {
+  const res = await fetch(`${TASKS_ENDPOINT}/${task.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(task)
@@ -51,8 +52,42 @@ export async function updateTask(task: Task): Promise<Task> {
 }
 
 export async function deleteTask(id: string): Promise<void> {
-  const res = await fetch(`${API_URL}/${id}`, {
+  const res = await fetch(`${TASKS_ENDPOINT}/${id}`, {
     method: "DELETE"
   })
   if (!res.ok) throw new Error("Failed to delete task")
+}
+
+export async function addComment(
+  taskId: string,
+  text: string,
+  author: string
+): Promise<Task> {
+  // fetch the task
+  const taskRes = await fetch(`${TASKS_ENDPOINT}/${taskId}`)
+  if (!taskRes.ok) throw new Error("Failed to fetch task")
+  const task = await taskRes.json()
+
+  // Add the new comment
+  const newComment = {
+    id: Date.now(),
+    text,
+    author,
+    createdAt: new Date().toISOString()
+  }
+
+  const updatedTask = {
+    ...task,
+    comments: [...(task.comments || []), newComment]
+  }
+
+  // Update the task with the new comment
+  const res = await fetch(`${TASKS_ENDPOINT}/${taskId}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedTask)
+  })
+
+  if (!res.ok) throw new Error("Failed to add comment")
+  return res.json()
 }

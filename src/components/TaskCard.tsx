@@ -21,6 +21,8 @@ import {
   Paperclip,
   Trash2
 } from "lucide-react"
+import { useState } from "react"
+import { DeleteConfirmDialog } from "./DeleteConfirmDialog"
 
 interface TaskCardProps {
   task: Task
@@ -43,12 +45,11 @@ const priorityGradients = {
 
 export function TaskCard({ task, onEdit, isDragging }: TaskCardProps) {
   const deleteTask = useDeleteTask()
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
 
-  const handleDelete = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    if (confirm("Are you sure you want to delete this task?")) {
-      deleteTask.mutate(task.id)
-    }
+  const handleDelete = () => {
+    deleteTask.mutate(task.id)
+    setDeleteDialogOpen(false)
   }
 
   const commentCount = task.comments?.length || 0
@@ -74,6 +75,7 @@ export function TaskCard({ task, onEdit, isDragging }: TaskCardProps) {
         transform: isDragging ? "rotate(2deg)" : "rotate(0deg)"
       }}
       className="cursor-grab active:cursor-grabbing"
+      onClick={() => !isDragging && onEdit?.(task)}
     >
       <Card
         className={`p-4 hover:shadow-2xl transition-all duration-300 group relative overflow-hidden border-l-4 ${priorityColors[task.priority]}`}
@@ -218,6 +220,15 @@ export function TaskCard({ task, onEdit, isDragging }: TaskCardProps) {
           )}
         </div>
       </Card>
+
+      <DeleteConfirmDialog
+        open={deleteDialogOpen}
+        onOpenChange={setDeleteDialogOpen}
+        onConfirm={handleDelete}
+        title="Delete Task"
+        description={`Are you sure you want to delete "${task.title}"? This action cannot be undone.`}
+        isDeleting={deleteTask.isPending}
+      />
     </div>
   )
 }
