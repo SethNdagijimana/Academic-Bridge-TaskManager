@@ -107,7 +107,7 @@ export function KanbanColumn({
           ref={setNodeRef}
           className={`flex-1 space-y-3 overflow-y-auto pr-1 transition-colors rounded-lg p-2 ${
             isOver
-              ? "bg-blue-50 dark:bg-blue-900/10 border-2 border-dashed border-blue-300 dark:border-blue-700"
+              ? "bg-sky-50 dark:bg-sky-900/10 border-2 border-dashed border-sky-300 dark:border-sky-700"
               : ""
           }`}
         >

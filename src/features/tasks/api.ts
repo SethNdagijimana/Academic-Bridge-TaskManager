@@ -13,7 +13,6 @@ export async function fetchTasks(): Promise<Task[]> {
   return tasks.map((task: any) => {
     let status = task.status as string
 
-    // Convert old numeric seed data to proper format
     if (status === "2") status = "todo"
     else if (status === "5" || status === "6" || status === "7")
       status = "in-progress"
@@ -42,7 +41,6 @@ export async function updateTask(task: Task): Promise<Task> {
   if (!res.ok) throw new Error("Failed to update task")
   const updated = await res.json()
 
-  // Normalize the response
   let status = updated.status as string
   if (status === "2") status = "todo"
   else if (status === "5" || status === "6" || status === "7")

@@ -118,13 +118,34 @@ export default function KanbanPage() {
       return
     }
 
-    const newStatus = String(over.id) as TaskStatus
+    // Determine the new status
+    let newStatus: TaskStatus | null = null
 
-    if (!["todo", "in-progress", "done"].includes(newStatus)) {
-      console.error("Invalid status:", newStatus)
+    // Check if we dropped over a column
+    if (over.data?.current?.type === "column") {
+      newStatus = over.data.current.status as TaskStatus
+    } else {
+      // If we dropped over another task, find which column it belongs to
+      const overTask = tasks.find((t) => t.id === over.id)
+      if (overTask) {
+        newStatus = overTask.status
+      }
+    }
+
+    // If we still don't have a status, check if over.id is a valid status
+    if (
+      !newStatus &&
+      ["todo", "in-progress", "done"].includes(String(over.id))
+    ) {
+      newStatus = String(over.id) as TaskStatus
+    }
+
+    if (!newStatus) {
+      console.error("Could not determine target status")
       return
     }
 
+    // Only update if status changed
     if (task.status !== newStatus) {
       console.log("Updating task", taskId, "from", task.status, "to", newStatus)
       updateTask.mutate({
