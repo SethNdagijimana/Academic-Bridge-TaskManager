@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
+import { setSearchQuery } from "@/features/tasks/tasksSlice"
 import {
   setLanguage,
   setSidebarOpen,
@@ -30,6 +31,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
   const { i18n } = useTranslation()
 
   const { theme, sidebarOpen, language } = useAppSelector((state) => state.ui)
+  const { searchQuery } = useAppSelector((state) => state.tasks.filters)
 
   useEffect(() => {
     const root = document.documentElement
@@ -43,6 +45,11 @@ export default function AppLayout({ children }: AppLayoutProps) {
 
   const handleLanguageChange = (lang: "en" | "fr") => {
     dispatch(setLanguage(lang))
+  }
+
+  // ADD THIS HANDLER
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchQuery(e.target.value))
   }
 
   return (
@@ -70,6 +77,8 @@ export default function AppLayout({ children }: AppLayoutProps) {
                 <Input
                   placeholder="Search tasks, projects..."
                   className="pl-10 bg-slate-50 dark:bg-slate-800/50 border-0 h-10"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
                 />
               </div>
             </div>
