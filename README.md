@@ -127,7 +127,7 @@ hr-tasks-hub/
 │   ├── app/                    # Redux store configuration
 │   │   ├── hooks.ts
 │   │   └── store.ts
-│   ├── components/             # Reusable components
+│   ├── components/
 │   │   ├── layout/
 │   │   │   └── AppLayout.tsx
 │   │   ├── ui/                 # shadcn/ui components
@@ -166,27 +166,11 @@ hr-tasks-hub/
 └── README.md
 ```
 
-## 🔧 Configuration
-
-### Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-VITE_API_URL=http://localhost:4000
-```
-
-### JSON Server Configuration
-
-The mock API uses `db.json` for data persistence. The server runs on port 4000 by default.
-
 ## Available Scripts
 
 ```bash
 # Development
 yarn dev          # Start development server
-yarn api       # Start JSON Server (mock API)
-
 
 
 # Build
