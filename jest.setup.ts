@@ -1,6 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// jest.setup.ts
+
 import "@testing-library/jest-dom"
+
+Object.defineProperty(global, "import.meta", {
+  value: {
+    env: {
+      VITE_API_URL: "http://localhost:4000"
+    }
+  }
+})
 
 // Mock ResizeObserver
 global.ResizeObserver = class ResizeObserver {

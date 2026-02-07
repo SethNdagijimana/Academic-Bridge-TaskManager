@@ -1,4 +1,5 @@
 jest.mock("react-i18next")
+jest.mock("@/features/tasks/api")
 
 import { Task } from "@/features/tasks/types"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
@@ -92,7 +93,6 @@ describe("TaskCard", () => {
     expect(moreButton).toBeInTheDocument()
     await user.click(moreButton)
 
-    // Click edit
     const editButton = screen.getByText("Edit")
     await user.click(editButton)
 

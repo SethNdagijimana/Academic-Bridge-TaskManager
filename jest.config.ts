@@ -16,5 +16,12 @@ export default {
       }
     ]
   },
-  testMatch: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(spec|test).ts?(x)"]
+  testMatch: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(spec|test).ts?(x)"],
+  globals: {
+    "import.meta": {
+      env: {
+        VITE_API_URL: "http://localhost:4000"
+      }
+    }
+  }
 }

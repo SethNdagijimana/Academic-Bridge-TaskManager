@@ -1,4 +1,5 @@
 jest.mock("react-i18next")
+jest.mock("@/features/tasks/api")
 
 import tasksReducer from "@/features/tasks/tasksSlice"
 import uiReducer from "@/features/ui/uiSlice"
@@ -37,7 +38,6 @@ describe("TaskModal", () => {
   it("renders create mode when no task is provided", () => {
     render(<TaskModal open={true} onClose={mockOnClose} />, { wrapper })
 
-    // Use getByRole to target the heading specifically
     expect(
       screen.getByRole("heading", { name: "Create Task" })
     ).toBeInTheDocument()
@@ -88,12 +88,10 @@ describe("TaskModal", () => {
     expect(screen.getByLabelText(/title/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/description/i)).toBeInTheDocument()
 
-    // For Select components, check by text or role
     expect(screen.getByText("Status")).toBeInTheDocument()
     expect(screen.getByText("Priority")).toBeInTheDocument()
     expect(screen.getAllByRole("combobox")).toHaveLength(2)
 
-    // Use getAllByText and check the first one (the label, not the option)
     const progressElements = screen.getAllByText(/^Progress$/i)
     expect(progressElements[0]).toBeInTheDocument()
   })
