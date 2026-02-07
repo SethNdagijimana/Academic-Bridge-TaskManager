@@ -34,9 +34,11 @@ import { motion } from "framer-motion"
 import { Filter, Loader2, Plus, SlidersHorizontal, Users } from "lucide-react"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
 
 export default function KanbanPage() {
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
   const { data: tasks = [], isLoading, error } = useTasks()
   const updateTask = useUpdateTask()
   const deleteTask = useDeleteTask()
@@ -255,7 +257,7 @@ export default function KanbanPage() {
                   checked={filters.statuses.includes("todo")}
                   onCheckedChange={() => handleToggleStatusFilter("todo")}
                 >
-                  📋 To Do
+                  To Do
                 </DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem
                   checked={filters.statuses.includes("in-progress")}
@@ -263,23 +265,33 @@ export default function KanbanPage() {
                     handleToggleStatusFilter("in-progress")
                   }
                 >
-                  ⚡ In Progress
+                  In Progress
                 </DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem
                   checked={filters.statuses.includes("done")}
                   onCheckedChange={() => handleToggleStatusFilter("done")}
                 >
-                  ✅ Done
+                  Done
                 </DropdownMenuCheckboxItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="outline" size="sm" className="gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-2"
+              onClick={() => navigate("/list")}
+            >
               <SlidersHorizontal className="h-4 w-4" />
               {t("view")}
             </Button>
 
-            <Button variant="outline" size="sm" className="gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-2"
+              onClick={() => navigate("/team")}
+            >
               <Users className="h-4 w-4" />
               {t("team")}
             </Button>

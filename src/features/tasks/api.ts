@@ -1,58 +1,97 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Task, TaskStatus } from "./types"
+import { Task, TaskPriority, TaskStatus } from "./types"
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000"
-const TASKS_ENDPOINT = `${API_URL}/tasks`
+const API_URL = "https://dummyjson.com/todos"
+
+function mapDummyTodoToTask(todo: any): Task {
+  let status: TaskStatus
+  const remainder = todo.id % 3
+  if (remainder === 0) {
+    status = "todo"
+  } else if (remainder === 1) {
+    status = "in-progress"
+  } else {
+    status = "done"
+  }
+
+  const priorities: TaskPriority[] = ["low", "medium", "high"]
+  const randomPriority = priorities[todo.id % 3]
+
+  return {
+    id: String(todo.id),
+    title: todo.todo,
+    description: `Task from DummyJSON API - User ${todo.userId}`,
+    status: status,
+    priority: randomPriority,
+    progress:
+      status === "done"
+        ? 100
+        : status === "in-progress"
+          ? Math.floor(Math.random() * 60) + 20
+          : 0,
+    tags: ["api", "dummy"],
+    assignees: [
+      {
+        id: todo.userId,
+        name: `User ${todo.userId}`,
+        avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=User${todo.userId}`,
+        color: "bg-blue-500"
+      }
+    ],
+    comments: [],
+    attachments: [],
+    startDate: new Date(
+      Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000
+    ).toISOString(),
+    dueDate: new Date(
+      Date.now() + Math.random() * 14 * 24 * 60 * 60 * 1000
+    ).toISOString()
+  }
+}
 
 export async function fetchTasks(): Promise<Task[]> {
-  const res = await fetch(TASKS_ENDPOINT)
+  const res = await fetch(`${API_URL}?limit=30`)
   if (!res.ok) throw new Error("Failed to fetch tasks")
   const data = await res.json()
 
-  const tasks = Array.isArray(data) ? data : data.tasks || []
-
-  return tasks.map((task: any) => {
-    let status = task.status as string
-
-    if (status === "2") status = "todo"
-    else if (status === "5" || status === "6" || status === "7")
-      status = "in-progress"
-    else if (status === "8") status = "done"
-
-    return { ...task, status: status as TaskStatus }
-  })
+  return data.todos.map(mapDummyTodoToTask)
 }
 
 export async function createTask(task: Omit<Task, "id">): Promise<Task> {
-  const res = await fetch(TASKS_ENDPOINT, {
+  const res = await fetch(`${API_URL}/add`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(task)
+    body: JSON.stringify({
+      todo: task.title,
+      completed: task.status === "done",
+      userId: 1
+    })
   })
   if (!res.ok) throw new Error("Failed to create task")
-  return res.json()
+  const data = await res.json()
+
+  return {
+    ...task,
+    id: String(data.id)
+  }
 }
 
 export async function updateTask(task: Task): Promise<Task> {
-  const res = await fetch(`${TASKS_ENDPOINT}/${task.id}`, {
+  const res = await fetch(`${API_URL}/${task.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(task)
+    body: JSON.stringify({
+      todo: task.title,
+      completed: task.status === "done"
+    })
   })
   if (!res.ok) throw new Error("Failed to update task")
-  const updated = await res.json()
 
-  let status = updated.status as string
-  if (status === "2") status = "todo"
-  else if (status === "5" || status === "6" || status === "7")
-    status = "in-progress"
-  else if (status === "8") status = "done"
-
-  return { ...updated, status: status as TaskStatus }
+  return task
 }
 
 export async function deleteTask(id: string): Promise<void> {
-  const res = await fetch(`${TASKS_ENDPOINT}/${id}`, {
+  const res = await fetch(`${API_URL}/${id}`, {
     method: "DELETE"
   })
   if (!res.ok) throw new Error("Failed to delete task")
@@ -63,12 +102,12 @@ export async function addComment(
   text: string,
   author: string
 ): Promise<Task> {
-  // fetch the task
-  const taskRes = await fetch(`${TASKS_ENDPOINT}/${taskId}`)
+  const taskRes = await fetch(`${API_URL}/${taskId}`)
   if (!taskRes.ok) throw new Error("Failed to fetch task")
-  const task = await taskRes.json()
+  const todo = await taskRes.json()
 
-  // Add the new comment
+  const task = mapDummyTodoToTask(todo)
+
   const newComment = {
     id: Date.now(),
     text,
@@ -76,18 +115,8 @@ export async function addComment(
     createdAt: new Date().toISOString()
   }
 
-  const updatedTask = {
+  return {
     ...task,
     comments: [...(task.comments || []), newComment]
   }
-
-  // Update the task with the new comment
-  const res = await fetch(`${TASKS_ENDPOINT}/${taskId}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(updatedTask)
-  })
-
-  if (!res.ok) throw new Error("Failed to add comment")
-  return res.json()
 }
