@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "api": "json-server --watch db.json --port 4000",
     "test": "jest",
-    "test:ci": "jest --ci --coverage --maxWorkers=2",
+    "test:ci": "jest --ci --coverage --maxWorkers=2 --testPathIgnorePatterns=/e2e/",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:e2e": "playwright test",

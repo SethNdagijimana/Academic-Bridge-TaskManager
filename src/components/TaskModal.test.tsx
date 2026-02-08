@@ -1,4 +1,14 @@
-jest.mock("react-i18next")
+jest.mock("react-i18next", () => ({
+  useTranslation: () => ({
+    t: (key: string) => key,
+    i18n: {
+      changeLanguage: () => Promise.resolve(),
+      language: "en"
+    }
+  }),
+  Trans: ({ children }: { children: React.ReactNode }) => children
+}))
+
 jest.mock("@/features/tasks/api")
 
 import tasksReducer from "@/features/tasks/tasksSlice"
@@ -39,7 +49,7 @@ describe("TaskModal", () => {
     render(<TaskModal open={true} onClose={mockOnClose} />, { wrapper })
 
     expect(
-      screen.getByRole("heading", { name: "Create Task" })
+      screen.getByRole("heading", { name: "createTask" })
     ).toBeInTheDocument()
   })
 
@@ -57,7 +67,7 @@ describe("TaskModal", () => {
     })
 
     expect(
-      screen.getByRole("heading", { name: "Edit Task" })
+      screen.getByRole("heading", { name: "editTask" })
     ).toBeInTheDocument()
     expect(screen.getByDisplayValue("Test Task")).toBeInTheDocument()
   })
@@ -65,18 +75,18 @@ describe("TaskModal", () => {
   it("shows validation error when title is empty", async () => {
     render(<TaskModal open={true} onClose={mockOnClose} />, { wrapper })
 
-    const submitButton = screen.getByRole("button", { name: /create task/i })
+    const submitButton = screen.getByRole("button", { name: "createTask" })
     fireEvent.click(submitButton)
 
     await waitFor(() => {
-      expect(screen.getByText(/title is required/i)).toBeInTheDocument()
+      expect(screen.getByText("titleRequired")).toBeInTheDocument()
     })
   })
 
   it("closes modal when cancel button is clicked", () => {
     render(<TaskModal open={true} onClose={mockOnClose} />, { wrapper })
 
-    const cancelButton = screen.getByRole("button", { name: /cancel/i })
+    const cancelButton = screen.getByRole("button", { name: "cancel" })
     fireEvent.click(cancelButton)
 
     expect(mockOnClose).toHaveBeenCalled()
@@ -88,8 +98,8 @@ describe("TaskModal", () => {
     expect(screen.getByLabelText(/title/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/description/i)).toBeInTheDocument()
 
-    expect(screen.getByText("Status")).toBeInTheDocument()
-    expect(screen.getByText("Priority")).toBeInTheDocument()
+    expect(screen.getByText("status")).toBeInTheDocument()
+    expect(screen.getByText("priority")).toBeInTheDocument()
     expect(screen.getAllByRole("combobox")).toHaveLength(2)
 
     const progressElements = screen.getAllByText(/^Progress$/i)
