@@ -20,8 +20,8 @@ import { useTranslation } from "react-i18next"
 import { Link, useLocation } from "react-router-dom"
 
 const navigation = [
-  { name: "Dashboard", icon: Home, path: "/dashboard" },
-  { name: "Board", icon: LayoutGrid, path: "/" },
+  { name: "Dashboard", icon: Home, path: "/" },
+  { name: "Board", icon: LayoutGrid, path: "/board" },
   { name: "List", icon: List, path: "/list" },
   { name: "Calendar", icon: Calendar, path: "/calendar" },
   { name: "Team", icon: Users, path: "/team" }

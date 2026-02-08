@@ -1,0 +1,742 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e6]:
+      - img [ref=e8]
+      - generic [ref=e13]: Task Manager
+    - navigation [ref=e14]:
+      - generic [ref=e15]:
+        - link "Dashboard" [ref=e16] [cursor=pointer]:
+          - /url: /
+          - button "Dashboard" [ref=e18]:
+            - img
+            - generic [ref=e19]: Dashboard
+        - link "Board" [ref=e20] [cursor=pointer]:
+          - /url: /board
+          - button "Board" [ref=e22]:
+            - img
+            - generic [ref=e23]: Board
+        - link "List" [ref=e24] [cursor=pointer]:
+          - /url: /list
+          - button "List" [ref=e26]:
+            - img
+            - generic [ref=e27]: List
+        - link "Calendar" [ref=e28] [cursor=pointer]:
+          - /url: /calendar
+          - button "Calendar" [ref=e30]:
+            - img
+            - generic [ref=e31]: Calendar
+        - link "Team" [ref=e32] [cursor=pointer]:
+          - /url: /team
+          - button "Team" [ref=e34]:
+            - img
+            - generic [ref=e35]: Team
+      - generic [ref=e36]:
+        - paragraph [ref=e38]: Recent Pages
+        - generic [ref=e39]:
+          - button "World Comp" [ref=e41]:
+            - generic [ref=e43]: World Comp
+            - img
+          - button "Arcelor Group" [ref=e45]:
+            - generic [ref=e47]: Arcelor Group
+            - img
+          - button "IB Talks Hub" [ref=e49]:
+            - generic [ref=e51]: IB Talks Hub
+            - img
+          - button "Endevis Tamodek" [ref=e53]:
+            - generic [ref=e55]: Endevis Tamodek
+            - img
+      - generic [ref=e56]:
+        - paragraph [ref=e58]: Recent Projects
+        - generic [ref=e59]:
+          - button "HR Tasks Hub" [ref=e61]:
+            - generic [ref=e63]: HR Tasks Hub
+          - button "WHMCS Panel" [ref=e65]:
+            - generic [ref=e67]: WHMCS Panel
+          - button "Marketing Campaign" [ref=e69]:
+            - generic [ref=e71]: Marketing Campaign
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - img [ref=e78]
+        - generic [ref=e79]:
+          - paragraph [ref=e80]: Seth N.
+          - paragraph [ref=e81]: seth@example.com
+      - paragraph [ref=e82]:
+        - img [ref=e83]
+        - text: Maximize your potential
+      - button "Upgrade Now" [ref=e86]
+  - generic [ref=e87]:
+    - banner [ref=e88]:
+      - generic [ref=e89]:
+        - generic [ref=e91]:
+          - img [ref=e92]
+          - textbox "Search tasks, projects..." [ref=e95]
+        - generic [ref=e96]:
+          - button [ref=e98]:
+            - img
+          - button [ref=e100]:
+            - img
+          - button [ref=e102]:
+            - generic [ref=e103]:
+              - img
+    - main [ref=e104]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - heading "Team Members" [level=1] [ref=e110]
+              - paragraph [ref=e111]: Manage and view team member workload
+            - button "Add Member" [ref=e112]:
+              - img
+              - text: Add Member
+          - generic [ref=e113]:
+            - img [ref=e114]
+            - textbox "Search team members..." [ref=e117]
+        - generic [ref=e118]:
+          - generic [ref=e121]:
+            - img "User 152" [ref=e123]
+            - heading "User 152" [level=3] [ref=e124]
+            - paragraph [ref=e125]: Team Member
+            - generic [ref=e126]:
+              - generic [ref=e127]:
+                - generic [ref=e128]: Tasks
+                - generic [ref=e129]: "1"
+              - generic [ref=e130]:
+                - generic [ref=e131]: Completed
+                - generic [ref=e132]: "0"
+              - generic [ref=e133]:
+                - generic [ref=e134]:
+                  - generic [ref=e135]: Completion Rate
+                  - generic [ref=e136]: 0%
+                - progressbar [ref=e137]
+            - generic [ref=e139]:
+              - button "Email" [ref=e140]:
+                - img
+                - text: Email
+              - button "Call" [ref=e141]:
+                - img
+                - text: Call
+          - generic [ref=e144]:
+            - img "User 13" [ref=e146]
+            - heading "User 13" [level=3] [ref=e147]
+            - paragraph [ref=e148]: Team Member
+            - generic [ref=e149]:
+              - generic [ref=e150]:
+                - generic [ref=e151]: Tasks
+                - generic [ref=e152]: "2"
+              - generic [ref=e153]:
+                - generic [ref=e154]: Completed
+                - generic [ref=e155]: "1"
+              - generic [ref=e156]:
+                - generic [ref=e157]:
+                  - generic [ref=e158]: Completion Rate
+                  - generic [ref=e159]: 50%
+                - progressbar [ref=e160]
+            - generic [ref=e162]:
+              - button "Email" [ref=e163]:
+                - img
+                - text: Email
+              - button "Call" [ref=e164]:
+                - img
+                - text: Call
+          - generic [ref=e167]:
+            - img "User 68" [ref=e169]
+            - heading "User 68" [level=3] [ref=e170]
+            - paragraph [ref=e171]: Team Member
+            - generic [ref=e172]:
+              - generic [ref=e173]:
+                - generic [ref=e174]: Tasks
+                - generic [ref=e175]: "1"
+              - generic [ref=e176]:
+                - generic [ref=e177]: Completed
+                - generic [ref=e178]: "0"
+              - generic [ref=e179]:
+                - generic [ref=e180]:
+                  - generic [ref=e181]: Completion Rate
+                  - generic [ref=e182]: 0%
+                - progressbar [ref=e183]
+            - generic [ref=e185]:
+              - button "Email" [ref=e186]:
+                - img
+                - text: Email
+              - button "Call" [ref=e187]:
+                - img
+                - text: Call
+          - generic [ref=e190]:
+            - img "User 84" [ref=e192]
+            - heading "User 84" [level=3] [ref=e193]
+            - paragraph [ref=e194]: Team Member
+            - generic [ref=e195]:
+              - generic [ref=e196]:
+                - generic [ref=e197]: Tasks
+                - generic [ref=e198]: "1"
+              - generic [ref=e199]:
+                - generic [ref=e200]: Completed
+                - generic [ref=e201]: "0"
+              - generic [ref=e202]:
+                - generic [ref=e203]:
+                  - generic [ref=e204]: Completion Rate
+                  - generic [ref=e205]: 0%
+                - progressbar [ref=e206]
+            - generic [ref=e208]:
+              - button "Email" [ref=e209]:
+                - img
+                - text: Email
+              - button "Call" [ref=e210]:
+                - img
+                - text: Call
+          - generic [ref=e213]:
+            - img "User 163" [ref=e215]
+            - heading "User 163" [level=3] [ref=e216]
+            - paragraph [ref=e217]: Team Member
+            - generic [ref=e218]:
+              - generic [ref=e219]:
+                - generic [ref=e220]: Tasks
+                - generic [ref=e221]: "1"
+              - generic [ref=e222]:
+                - generic [ref=e223]: Completed
+                - generic [ref=e224]: "1"
+              - generic [ref=e225]:
+                - generic [ref=e226]:
+                  - generic [ref=e227]: Completion Rate
+                  - generic [ref=e228]: 100%
+                - progressbar [ref=e229]
+            - generic [ref=e231]:
+              - button "Email" [ref=e232]:
+                - img
+                - text: Email
+              - button "Call" [ref=e233]:
+                - img
+                - text: Call
+          - generic [ref=e236]:
+            - img "User 69" [ref=e238]
+            - heading "User 69" [level=3] [ref=e239]
+            - paragraph [ref=e240]: Team Member
+            - generic [ref=e241]:
+              - generic [ref=e242]:
+                - generic [ref=e243]: Tasks
+                - generic [ref=e244]: "1"
+              - generic [ref=e245]:
+                - generic [ref=e246]: Completed
+                - generic [ref=e247]: "0"
+              - generic [ref=e248]:
+                - generic [ref=e249]:
+                  - generic [ref=e250]: Completion Rate
+                  - generic [ref=e251]: 0%
+                - progressbar [ref=e252]
+            - generic [ref=e254]:
+              - button "Email" [ref=e255]:
+                - img
+                - text: Email
+              - button "Call" [ref=e256]:
+                - img
+                - text: Call
+          - generic [ref=e259]:
+            - img "User 76" [ref=e261]
+            - heading "User 76" [level=3] [ref=e262]
+            - paragraph [ref=e263]: Team Member
+            - generic [ref=e264]:
+              - generic [ref=e265]:
+                - generic [ref=e266]: Tasks
+                - generic [ref=e267]: "1"
+              - generic [ref=e268]:
+                - generic [ref=e269]: Completed
+                - generic [ref=e270]: "0"
+              - generic [ref=e271]:
+                - generic [ref=e272]:
+                  - generic [ref=e273]: Completion Rate
+                  - generic [ref=e274]: 0%
+                - progressbar [ref=e275]
+            - generic [ref=e277]:
+              - button "Email" [ref=e278]:
+                - img
+                - text: Email
+              - button "Call" [ref=e279]:
+                - img
+                - text: Call
+          - generic [ref=e282]:
+            - img "User 198" [ref=e284]
+            - heading "User 198" [level=3] [ref=e285]
+            - paragraph [ref=e286]: Team Member
+            - generic [ref=e287]:
+              - generic [ref=e288]:
+                - generic [ref=e289]: Tasks
+                - generic [ref=e290]: "1"
+              - generic [ref=e291]:
+                - generic [ref=e292]: Completed
+                - generic [ref=e293]: "1"
+              - generic [ref=e294]:
+                - generic [ref=e295]:
+                  - generic [ref=e296]: Completion Rate
+                  - generic [ref=e297]: 100%
+                - progressbar [ref=e298]
+            - generic [ref=e300]:
+              - button "Email" [ref=e301]:
+                - img
+                - text: Email
+              - button "Call" [ref=e302]:
+                - img
+                - text: Call
+          - generic [ref=e305]:
+            - img "User 7" [ref=e307]
+            - heading "User 7" [level=3] [ref=e308]
+            - paragraph [ref=e309]: Team Member
+            - generic [ref=e310]:
+              - generic [ref=e311]:
+                - generic [ref=e312]: Tasks
+                - generic [ref=e313]: "1"
+              - generic [ref=e314]:
+                - generic [ref=e315]: Completed
+                - generic [ref=e316]: "0"
+              - generic [ref=e317]:
+                - generic [ref=e318]:
+                  - generic [ref=e319]: Completion Rate
+                  - generic [ref=e320]: 0%
+                - progressbar [ref=e321]
+            - generic [ref=e323]:
+              - button "Email" [ref=e324]:
+                - img
+                - text: Email
+              - button "Call" [ref=e325]:
+                - img
+                - text: Call
+          - generic [ref=e328]:
+            - img "User 9" [ref=e330]
+            - heading "User 9" [level=3] [ref=e331]
+            - paragraph [ref=e332]: Team Member
+            - generic [ref=e333]:
+              - generic [ref=e334]:
+                - generic [ref=e335]: Tasks
+                - generic [ref=e336]: "1"
+              - generic [ref=e337]:
+                - generic [ref=e338]: Completed
+                - generic [ref=e339]: "0"
+              - generic [ref=e340]:
+                - generic [ref=e341]:
+                  - generic [ref=e342]: Completion Rate
+                  - generic [ref=e343]: 0%
+                - progressbar [ref=e344]
+            - generic [ref=e346]:
+              - button "Email" [ref=e347]:
+                - img
+                - text: Email
+              - button "Call" [ref=e348]:
+                - img
+                - text: Call
+          - generic [ref=e351]:
+            - img "User 104" [ref=e353]
+            - heading "User 104" [level=3] [ref=e354]
+            - paragraph [ref=e355]: Team Member
+            - generic [ref=e356]:
+              - generic [ref=e357]:
+                - generic [ref=e358]: Tasks
+                - generic [ref=e359]: "1"
+              - generic [ref=e360]:
+                - generic [ref=e361]: Completed
+                - generic [ref=e362]: "1"
+              - generic [ref=e363]:
+                - generic [ref=e364]:
+                  - generic [ref=e365]: Completion Rate
+                  - generic [ref=e366]: 100%
+                - progressbar [ref=e367]
+            - generic [ref=e369]:
+              - button "Email" [ref=e370]:
+                - img
+                - text: Email
+              - button "Call" [ref=e371]:
+                - img
+                - text: Call
+          - generic [ref=e374]:
+            - img "User 32" [ref=e376]
+            - heading "User 32" [level=3] [ref=e377]
+            - paragraph [ref=e378]: Team Member
+            - generic [ref=e379]:
+              - generic [ref=e380]:
+                - generic [ref=e381]: Tasks
+                - generic [ref=e382]: "1"
+              - generic [ref=e383]:
+                - generic [ref=e384]: Completed
+                - generic [ref=e385]: "0"
+              - generic [ref=e386]:
+                - generic [ref=e387]:
+                  - generic [ref=e388]: Completion Rate
+                  - generic [ref=e389]: 0%
+                - progressbar [ref=e390]
+            - generic [ref=e392]:
+              - button "Email" [ref=e393]:
+                - img
+                - text: Email
+              - button "Call" [ref=e394]:
+                - img
+                - text: Call
+          - generic [ref=e397]:
+            - img "User 2" [ref=e399]
+            - heading "User 2" [level=3] [ref=e400]
+            - paragraph [ref=e401]: Team Member
+            - generic [ref=e402]:
+              - generic [ref=e403]:
+                - generic [ref=e404]: Tasks
+                - generic [ref=e405]: "1"
+              - generic [ref=e406]:
+                - generic [ref=e407]: Completed
+                - generic [ref=e408]: "0"
+              - generic [ref=e409]:
+                - generic [ref=e410]:
+                  - generic [ref=e411]: Completion Rate
+                  - generic [ref=e412]: 0%
+                - progressbar [ref=e413]
+            - generic [ref=e415]:
+              - button "Email" [ref=e416]:
+                - img
+                - text: Email
+              - button "Call" [ref=e417]:
+                - img
+                - text: Call
+          - generic [ref=e420]:
+            - img "User 46" [ref=e422]
+            - heading "User 46" [level=3] [ref=e423]
+            - paragraph [ref=e424]: Team Member
+            - generic [ref=e425]:
+              - generic [ref=e426]:
+                - generic [ref=e427]: Tasks
+                - generic [ref=e428]: "1"
+              - generic [ref=e429]:
+                - generic [ref=e430]: Completed
+                - generic [ref=e431]: "1"
+              - generic [ref=e432]:
+                - generic [ref=e433]:
+                  - generic [ref=e434]: Completion Rate
+                  - generic [ref=e435]: 100%
+                - progressbar [ref=e436]
+            - generic [ref=e438]:
+              - button "Email" [ref=e439]:
+                - img
+                - text: Email
+              - button "Call" [ref=e440]:
+                - img
+                - text: Call
+          - generic [ref=e443]:
+            - img "User 105" [ref=e445]
+            - heading "User 105" [level=3] [ref=e446]
+            - paragraph [ref=e447]: Team Member
+            - generic [ref=e448]:
+              - generic [ref=e449]:
+                - generic [ref=e450]: Tasks
+                - generic [ref=e451]: "1"
+              - generic [ref=e452]:
+                - generic [ref=e453]: Completed
+                - generic [ref=e454]: "0"
+              - generic [ref=e455]:
+                - generic [ref=e456]:
+                  - generic [ref=e457]: Completion Rate
+                  - generic [ref=e458]: 0%
+                - progressbar [ref=e459]
+            - generic [ref=e461]:
+              - button "Email" [ref=e462]:
+                - img
+                - text: Email
+              - button "Call" [ref=e463]:
+                - img
+                - text: Call
+          - generic [ref=e466]:
+            - img "User 162" [ref=e468]
+            - heading "User 162" [level=3] [ref=e469]
+            - paragraph [ref=e470]: Team Member
+            - generic [ref=e471]:
+              - generic [ref=e472]:
+                - generic [ref=e473]: Tasks
+                - generic [ref=e474]: "2"
+              - generic [ref=e475]:
+                - generic [ref=e476]: Completed
+                - generic [ref=e477]: "1"
+              - generic [ref=e478]:
+                - generic [ref=e479]:
+                  - generic [ref=e480]: Completion Rate
+                  - generic [ref=e481]: 50%
+                - progressbar [ref=e482]
+            - generic [ref=e484]:
+              - button "Email" [ref=e485]:
+                - img
+                - text: Email
+              - button "Call" [ref=e486]:
+                - img
+                - text: Call
+          - generic [ref=e489]:
+            - img "User 71" [ref=e491]
+            - heading "User 71" [level=3] [ref=e492]
+            - paragraph [ref=e493]: Team Member
+            - generic [ref=e494]:
+              - generic [ref=e495]:
+                - generic [ref=e496]: Tasks
+                - generic [ref=e497]: "1"
+              - generic [ref=e498]:
+                - generic [ref=e499]: Completed
+                - generic [ref=e500]: "1"
+              - generic [ref=e501]:
+                - generic [ref=e502]:
+                  - generic [ref=e503]: Completion Rate
+                  - generic [ref=e504]: 100%
+                - progressbar [ref=e505]
+            - generic [ref=e507]:
+              - button "Email" [ref=e508]:
+                - img
+                - text: Email
+              - button "Call" [ref=e509]:
+                - img
+                - text: Call
+          - generic [ref=e512]:
+            - img "User 6" [ref=e514]
+            - heading "User 6" [level=3] [ref=e515]
+            - paragraph [ref=e516]: Team Member
+            - generic [ref=e517]:
+              - generic [ref=e518]:
+                - generic [ref=e519]: Tasks
+                - generic [ref=e520]: "1"
+              - generic [ref=e521]:
+                - generic [ref=e522]: Completed
+                - generic [ref=e523]: "0"
+              - generic [ref=e524]:
+                - generic [ref=e525]:
+                  - generic [ref=e526]: Completion Rate
+                  - generic [ref=e527]: 0%
+                - progressbar [ref=e528]
+            - generic [ref=e530]:
+              - button "Email" [ref=e531]:
+                - img
+                - text: Email
+              - button "Call" [ref=e532]:
+                - img
+                - text: Call
+          - generic [ref=e535]:
+            - img "User 53" [ref=e537]
+            - heading "User 53" [level=3] [ref=e538]
+            - paragraph [ref=e539]: Team Member
+            - generic [ref=e540]:
+              - generic [ref=e541]:
+                - generic [ref=e542]: Tasks
+                - generic [ref=e543]: "1"
+              - generic [ref=e544]:
+                - generic [ref=e545]: Completed
+                - generic [ref=e546]: "0"
+              - generic [ref=e547]:
+                - generic [ref=e548]:
+                  - generic [ref=e549]: Completion Rate
+                  - generic [ref=e550]: 0%
+                - progressbar [ref=e551]
+            - generic [ref=e553]:
+              - button "Email" [ref=e554]:
+                - img
+                - text: Email
+              - button "Call" [ref=e555]:
+                - img
+                - text: Call
+          - generic [ref=e558]:
+            - img "User 37" [ref=e560]
+            - heading "User 37" [level=3] [ref=e561]
+            - paragraph [ref=e562]: Team Member
+            - generic [ref=e563]:
+              - generic [ref=e564]:
+                - generic [ref=e565]: Tasks
+                - generic [ref=e566]: "1"
+              - generic [ref=e567]:
+                - generic [ref=e568]: Completed
+                - generic [ref=e569]: "0"
+              - generic [ref=e570]:
+                - generic [ref=e571]:
+                  - generic [ref=e572]: Completion Rate
+                  - generic [ref=e573]: 0%
+                - progressbar [ref=e574]
+            - generic [ref=e576]:
+              - button "Email" [ref=e577]:
+                - img
+                - text: Email
+              - button "Call" [ref=e578]:
+                - img
+                - text: Call
+          - generic [ref=e581]:
+            - img "User 65" [ref=e583]
+            - heading "User 65" [level=3] [ref=e584]
+            - paragraph [ref=e585]: Team Member
+            - generic [ref=e586]:
+              - generic [ref=e587]:
+                - generic [ref=e588]: Tasks
+                - generic [ref=e589]: "1"
+              - generic [ref=e590]:
+                - generic [ref=e591]: Completed
+                - generic [ref=e592]: "1"
+              - generic [ref=e593]:
+                - generic [ref=e594]:
+                  - generic [ref=e595]: Completion Rate
+                  - generic [ref=e596]: 100%
+                - progressbar [ref=e597]
+            - generic [ref=e599]:
+              - button "Email" [ref=e600]:
+                - img
+                - text: Email
+              - button "Call" [ref=e601]:
+                - img
+                - text: Call
+          - generic [ref=e604]:
+            - img "User 130" [ref=e606]
+            - heading "User 130" [level=3] [ref=e607]
+            - paragraph [ref=e608]: Team Member
+            - generic [ref=e609]:
+              - generic [ref=e610]:
+                - generic [ref=e611]: Tasks
+                - generic [ref=e612]: "1"
+              - generic [ref=e613]:
+                - generic [ref=e614]: Completed
+                - generic [ref=e615]: "0"
+              - generic [ref=e616]:
+                - generic [ref=e617]:
+                  - generic [ref=e618]: Completion Rate
+                  - generic [ref=e619]: 0%
+                - progressbar [ref=e620]
+            - generic [ref=e622]:
+              - button "Email" [ref=e623]:
+                - img
+                - text: Email
+              - button "Call" [ref=e624]:
+                - img
+                - text: Call
+          - generic [ref=e627]:
+            - img "User 140" [ref=e629]
+            - heading "User 140" [level=3] [ref=e630]
+            - paragraph [ref=e631]: Team Member
+            - generic [ref=e632]:
+              - generic [ref=e633]:
+                - generic [ref=e634]: Tasks
+                - generic [ref=e635]: "1"
+              - generic [ref=e636]:
+                - generic [ref=e637]: Completed
+                - generic [ref=e638]: "0"
+              - generic [ref=e639]:
+                - generic [ref=e640]:
+                  - generic [ref=e641]: Completion Rate
+                  - generic [ref=e642]: 0%
+                - progressbar [ref=e643]
+            - generic [ref=e645]:
+              - button "Email" [ref=e646]:
+                - img
+                - text: Email
+              - button "Call" [ref=e647]:
+                - img
+                - text: Call
+          - generic [ref=e650]:
+            - img "User 178" [ref=e652]
+            - heading "User 178" [level=3] [ref=e653]
+            - paragraph [ref=e654]: Team Member
+            - generic [ref=e655]:
+              - generic [ref=e656]:
+                - generic [ref=e657]: Tasks
+                - generic [ref=e658]: "1"
+              - generic [ref=e659]:
+                - generic [ref=e660]: Completed
+                - generic [ref=e661]: "1"
+              - generic [ref=e662]:
+                - generic [ref=e663]:
+                  - generic [ref=e664]: Completion Rate
+                  - generic [ref=e665]: 100%
+                - progressbar [ref=e666]
+            - generic [ref=e668]:
+              - button "Email" [ref=e669]:
+                - img
+                - text: Email
+              - button "Call" [ref=e670]:
+                - img
+                - text: Call
+          - generic [ref=e673]:
+            - img "User 194" [ref=e675]
+            - heading "User 194" [level=3] [ref=e676]
+            - paragraph [ref=e677]: Team Member
+            - generic [ref=e678]:
+              - generic [ref=e679]:
+                - generic [ref=e680]: Tasks
+                - generic [ref=e681]: "1"
+              - generic [ref=e682]:
+                - generic [ref=e683]: Completed
+                - generic [ref=e684]: "0"
+              - generic [ref=e685]:
+                - generic [ref=e686]:
+                  - generic [ref=e687]: Completion Rate
+                  - generic [ref=e688]: 0%
+                - progressbar [ref=e689]
+            - generic [ref=e691]:
+              - button "Email" [ref=e692]:
+                - img
+                - text: Email
+              - button "Call" [ref=e693]:
+                - img
+                - text: Call
+          - generic [ref=e696]:
+            - img "User 80" [ref=e698]
+            - heading "User 80" [level=3] [ref=e699]
+            - paragraph [ref=e700]: Team Member
+            - generic [ref=e701]:
+              - generic [ref=e702]:
+                - generic [ref=e703]: Tasks
+                - generic [ref=e704]: "1"
+              - generic [ref=e705]:
+                - generic [ref=e706]: Completed
+                - generic [ref=e707]: "0"
+              - generic [ref=e708]:
+                - generic [ref=e709]:
+                  - generic [ref=e710]: Completion Rate
+                  - generic [ref=e711]: 0%
+                - progressbar [ref=e712]
+            - generic [ref=e714]:
+              - button "Email" [ref=e715]:
+                - img
+                - text: Email
+              - button "Call" [ref=e716]:
+                - img
+                - text: Call
+          - generic [ref=e719]:
+            - img "User 91" [ref=e721]
+            - heading "User 91" [level=3] [ref=e722]
+            - paragraph [ref=e723]: Team Member
+            - generic [ref=e724]:
+              - generic [ref=e725]:
+                - generic [ref=e726]: Tasks
+                - generic [ref=e727]: "1"
+              - generic [ref=e728]:
+                - generic [ref=e729]: Completed
+                - generic [ref=e730]: "1"
+              - generic [ref=e731]:
+                - generic [ref=e732]:
+                  - generic [ref=e733]: Completion Rate
+                  - generic [ref=e734]: 100%
+                - progressbar [ref=e735]
+            - generic [ref=e737]:
+              - button "Email" [ref=e738]:
+                - img
+                - text: Email
+              - button "Call" [ref=e739]:
+                - img
+                - text: Call
+          - generic [ref=e742]:
+            - img "User 142" [ref=e744]
+            - heading "User 142" [level=3] [ref=e745]
+            - paragraph [ref=e746]: Team Member
+            - generic [ref=e747]:
+              - generic [ref=e748]:
+                - generic [ref=e749]: Tasks
+                - generic [ref=e750]: "1"
+              - generic [ref=e751]:
+                - generic [ref=e752]: Completed
+                - generic [ref=e753]: "0"
+              - generic [ref=e754]:
+                - generic [ref=e755]:
+                  - generic [ref=e756]: Completion Rate
+                  - generic [ref=e757]: 0%
+                - progressbar [ref=e758]
+            - generic [ref=e760]:
+              - button "Email" [ref=e761]:
+                - img
+                - text: Email
+              - button "Call" [ref=e762]:
+                - img
+                - text: Call
+```
