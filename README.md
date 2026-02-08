@@ -117,6 +117,32 @@ yarn test:coverage
 
 - Unit tests: `src/features/tasks/*.test.ts`
 - Component tests: `src/components/*.test.tsx`
+- E2E tests: `e2e/*.spec.ts`
+
+### E2E Test Coverage
+
+The Playwright E2E tests cover:
+
+**Kanban Board Operations**:
+
+- Creating new tasks with form validation
+- Viewing task details in modal
+- Editing tasks from details modal
+- Deleting tasks (both from details modal and dropdown menu)
+
+**Table View**:
+
+- Displaying task table with all data
+- Filtering by status (All, To Do, In Progress, Done)
+- Sorting by columns (Title, Status, Priority)
+
+**Calendar View**:
+
+- Navigation and page load verification
+
+**Team View**:
+
+- Searching team members
 
 ## Project Structure
 
