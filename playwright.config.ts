@@ -28,7 +28,9 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: "yarn dev",
+    command: process.env.CI
+      ? "npx vite preview --port 5173 --strictPort"
+      : "yarn dev",
     url: "http://localhost:5173",
     reuseExistingServer: !process.env.CI,
     timeout: 120000
