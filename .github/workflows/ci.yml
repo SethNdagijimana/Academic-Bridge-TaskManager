@@ -113,10 +113,17 @@ jobs:
       - name: Build project
         run: yarn build
 
+      - name: Kill processes on ports (cleanup from previous runs)
+        run: |
+          sudo lsof -ti:4000 | xargs kill -9 || true
+          sudo lsof -ti:5173 | xargs kill -9 || true
+          sleep 2
+
       - name: Start JSON Server
         run: |
           yarn api &
           echo $! > json-server.pid
+          sleep 2
 
       - name: Wait for JSON Server
         run: npx wait-on http://localhost:4000 --timeout 30000
@@ -125,6 +132,7 @@ jobs:
         run: |
           npx vite preview --port 5173 --strictPort &
           echo $! > vite-preview.pid
+          sleep 2
 
       - name: Wait for preview server
         run: npx wait-on http://localhost:5173 --timeout 60000
@@ -135,8 +143,10 @@ jobs:
       - name: Cleanup servers
         if: always()
         run: |
-          kill $(cat json-server.pid) || true
-          kill $(cat vite-preview.pid) || true
+          if [ -f json-server.pid ]; then kill $(cat json-server.pid) || true; fi
+          if [ -f vite-preview.pid ]; then kill $(cat vite-preview.pid) || true; fi
+          sudo lsof -ti:4000 | xargs kill -9 || true
+          sudo lsof -ti:5173 | xargs kill -9 || true
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
