@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import { defineConfig, devices } from "@playwright/test"
 
 export default defineConfig({
@@ -5,16 +7,17 @@ export default defineConfig({
 
   fullyParallel: true,
 
-  retries: 1,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 1,
+  workers: process.env.CI ? 1 : undefined,
 
-  reporter: "html",
+  reporter: process.env.CI ? [["html"], ["github"], ["list"]] : "html",
 
   use: {
     baseURL: "http://localhost:5173",
-
     screenshot: "only-on-failure",
-
-    video: "retain-on-failure"
+    video: "retain-on-failure",
+    trace: "on-first-retry"
   },
 
   projects: [
@@ -27,6 +30,7 @@ export default defineConfig({
   webServer: {
     command: "yarn dev",
     url: "http://localhost:5173",
-    reuseExistingServer: true
+    reuseExistingServer: !process.env.CI,
+    timeout: 120000
   }
 })
