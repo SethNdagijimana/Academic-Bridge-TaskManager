@@ -1,0 +1,543 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e6]:
+      - img [ref=e8]
+      - generic [ref=e13]: Task Manager
+    - navigation [ref=e14]:
+      - generic [ref=e15]:
+        - link "Dashboard" [ref=e16] [cursor=pointer]:
+          - /url: /
+          - button "Dashboard" [ref=e18]:
+            - img
+            - generic [ref=e19]: Dashboard
+        - link "Board" [ref=e20] [cursor=pointer]:
+          - /url: /board
+          - button "Board" [ref=e22]:
+            - img
+            - generic [ref=e23]: Board
+        - link "List" [ref=e24] [cursor=pointer]:
+          - /url: /list
+          - button "List" [ref=e26]:
+            - img
+            - generic [ref=e27]: List
+        - link "Calendar" [ref=e28] [cursor=pointer]:
+          - /url: /calendar
+          - button "Calendar" [ref=e30]:
+            - img
+            - generic [ref=e31]: Calendar
+        - link "Team" [ref=e32] [cursor=pointer]:
+          - /url: /team
+          - button "Team" [ref=e34]:
+            - img
+            - generic [ref=e35]: Team
+      - generic [ref=e36]:
+        - paragraph [ref=e38]: Recent Pages
+        - generic [ref=e39]:
+          - button "World Comp" [ref=e41]:
+            - generic [ref=e43]: World Comp
+            - img
+          - button "Arcelor Group" [ref=e45]:
+            - generic [ref=e47]: Arcelor Group
+            - img
+          - button "IB Talks Hub" [ref=e49]:
+            - generic [ref=e51]: IB Talks Hub
+            - img
+          - button "Endevis Tamodek" [ref=e53]:
+            - generic [ref=e55]: Endevis Tamodek
+            - img
+      - generic [ref=e56]:
+        - paragraph [ref=e58]: Recent Projects
+        - generic [ref=e59]:
+          - button "HR Tasks Hub" [ref=e61]:
+            - generic [ref=e63]: HR Tasks Hub
+          - button "WHMCS Panel" [ref=e65]:
+            - generic [ref=e67]: WHMCS Panel
+          - button "Marketing Campaign" [ref=e69]:
+            - generic [ref=e71]: Marketing Campaign
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - img [ref=e78]
+        - generic [ref=e79]:
+          - paragraph [ref=e80]: Seth N.
+          - paragraph [ref=e81]: seth@example.com
+      - paragraph [ref=e82]:
+        - img [ref=e83]
+        - text: Maximize your potential
+      - button "Upgrade Now" [ref=e86]
+  - generic [ref=e87]:
+    - banner [ref=e88]:
+      - generic [ref=e89]:
+        - generic [ref=e91]:
+          - img [ref=e92]
+          - textbox "Search tasks, projects..." [ref=e95]
+        - generic [ref=e96]:
+          - button [ref=e98]:
+            - img
+          - button [ref=e100]:
+            - img
+          - button [ref=e102]:
+            - generic [ref=e103]:
+              - img
+    - main [ref=e104]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - heading "Task List" [level=1] [ref=e110]
+              - paragraph [ref=e111]: View all tasks in table format
+            - button "New Task" [ref=e112]:
+              - img
+              - text: New Task
+          - generic [ref=e113]:
+            - generic [ref=e114]:
+              - img [ref=e115]
+              - textbox "Search tasks, projects..." [ref=e118]
+            - combobox [ref=e119]:
+              - generic: All Status
+              - img [ref=e120]
+            - combobox [ref=e122]:
+              - generic: All Priority
+              - img [ref=e123]
+        - table [ref=e127]:
+          - rowgroup [ref=e128]:
+            - row "# Title Description Status Priority Actions" [ref=e129]:
+              - columnheader "#" [ref=e130]
+              - columnheader "Title" [ref=e131]:
+                - button "Title" [ref=e132]:
+                  - text: Title
+                  - img
+              - columnheader "Description" [ref=e133]
+              - columnheader "Status" [ref=e134]:
+                - button "Status" [ref=e135]:
+                  - text: Status
+                  - img
+              - columnheader "Priority" [ref=e136]:
+                - button "Priority" [ref=e137]:
+                  - text: Priority
+                  - img
+              - columnheader "Actions" [ref=e138]
+          - rowgroup [ref=e139]:
+            - row "1 Do something nice for someone you care about Task from DummyJSON API - User 152 in progress medium" [ref=e140]:
+              - cell "1" [ref=e141]:
+                - generic [ref=e142]: "1"
+              - cell "Do something nice for someone you care about" [ref=e143]:
+                - generic [ref=e144]: Do something nice for someone you care about
+              - cell "Task from DummyJSON API - User 152" [ref=e145]:
+                - generic [ref=e146]: Task from DummyJSON API - User 152
+              - cell "in progress" [ref=e147]:
+                - generic [ref=e148]: in progress
+              - cell "medium" [ref=e149]:
+                - generic [ref=e150]: medium
+              - cell [ref=e151]:
+                - button [ref=e152]:
+                  - img
+            - row "2 Memorize a poem Task from DummyJSON API - User 13 done high" [ref=e153]:
+              - cell "2" [ref=e154]:
+                - generic [ref=e155]: "2"
+              - cell "Memorize a poem" [ref=e156]:
+                - generic [ref=e157]: Memorize a poem
+              - cell "Task from DummyJSON API - User 13" [ref=e158]:
+                - generic [ref=e159]: Task from DummyJSON API - User 13
+              - cell "done" [ref=e160]:
+                - generic [ref=e161]: done
+              - cell "high" [ref=e162]:
+                - generic [ref=e163]: high
+              - cell [ref=e164]:
+                - button [ref=e165]:
+                  - img
+            - row "3 Watch a classic movie Task from DummyJSON API - User 68 todo low" [ref=e166]:
+              - cell "3" [ref=e167]:
+                - generic [ref=e168]: "3"
+              - cell "Watch a classic movie" [ref=e169]:
+                - generic [ref=e170]: Watch a classic movie
+              - cell "Task from DummyJSON API - User 68" [ref=e171]:
+                - generic [ref=e172]: Task from DummyJSON API - User 68
+              - cell "todo" [ref=e173]:
+                - generic [ref=e174]: todo
+              - cell "low" [ref=e175]:
+                - generic [ref=e176]: low
+              - cell [ref=e177]:
+                - button [ref=e178]:
+                  - img
+            - row "4 Watch a documentary Task from DummyJSON API - User 84 in progress medium" [ref=e179]:
+              - cell "4" [ref=e180]:
+                - generic [ref=e181]: "4"
+              - cell "Watch a documentary" [ref=e182]:
+                - generic [ref=e183]: Watch a documentary
+              - cell "Task from DummyJSON API - User 84" [ref=e184]:
+                - generic [ref=e185]: Task from DummyJSON API - User 84
+              - cell "in progress" [ref=e186]:
+                - generic [ref=e187]: in progress
+              - cell "medium" [ref=e188]:
+                - generic [ref=e189]: medium
+              - cell [ref=e190]:
+                - button [ref=e191]:
+                  - img
+            - row "5 Invest in cryptocurrency Task from DummyJSON API - User 163 done high" [ref=e192]:
+              - cell "5" [ref=e193]:
+                - generic [ref=e194]: "5"
+              - cell "Invest in cryptocurrency" [ref=e195]:
+                - generic [ref=e196]: Invest in cryptocurrency
+              - cell "Task from DummyJSON API - User 163" [ref=e197]:
+                - generic [ref=e198]: Task from DummyJSON API - User 163
+              - cell "done" [ref=e199]:
+                - generic [ref=e200]: done
+              - cell "high" [ref=e201]:
+                - generic [ref=e202]: high
+              - cell [ref=e203]:
+                - button [ref=e204]:
+                  - img
+            - row "6 Contribute code or a monetary donation to an open-source software project Task from DummyJSON API - User 69 todo low" [ref=e205]:
+              - cell "6" [ref=e206]:
+                - generic [ref=e207]: "6"
+              - cell "Contribute code or a monetary donation to an open-source software project" [ref=e208]:
+                - generic [ref=e209]: Contribute code or a monetary donation to an open-source software project
+              - cell "Task from DummyJSON API - User 69" [ref=e210]:
+                - generic [ref=e211]: Task from DummyJSON API - User 69
+              - cell "todo" [ref=e212]:
+                - generic [ref=e213]: todo
+              - cell "low" [ref=e214]:
+                - generic [ref=e215]: low
+              - cell [ref=e216]:
+                - button [ref=e217]:
+                  - img
+            - row "7 Solve a Rubik's cube Task from DummyJSON API - User 76 in progress medium" [ref=e218]:
+              - cell "7" [ref=e219]:
+                - generic [ref=e220]: "7"
+              - cell "Solve a Rubik's cube" [ref=e221]:
+                - generic [ref=e222]: Solve a Rubik's cube
+              - cell "Task from DummyJSON API - User 76" [ref=e223]:
+                - generic [ref=e224]: Task from DummyJSON API - User 76
+              - cell "in progress" [ref=e225]:
+                - generic [ref=e226]: in progress
+              - cell "medium" [ref=e227]:
+                - generic [ref=e228]: medium
+              - cell [ref=e229]:
+                - button [ref=e230]:
+                  - img
+            - row "8 Bake pastries for yourself and neighbor Task from DummyJSON API - User 198 done high" [ref=e231]:
+              - cell "8" [ref=e232]:
+                - generic [ref=e233]: "8"
+              - cell "Bake pastries for yourself and neighbor" [ref=e234]:
+                - generic [ref=e235]: Bake pastries for yourself and neighbor
+              - cell "Task from DummyJSON API - User 198" [ref=e236]:
+                - generic [ref=e237]: Task from DummyJSON API - User 198
+              - cell "done" [ref=e238]:
+                - generic [ref=e239]: done
+              - cell "high" [ref=e240]:
+                - generic [ref=e241]: high
+              - cell [ref=e242]:
+                - button [ref=e243]:
+                  - img
+            - row "9 Go see a Broadway production Task from DummyJSON API - User 7 todo low" [ref=e244]:
+              - cell "9" [ref=e245]:
+                - generic [ref=e246]: "9"
+              - cell "Go see a Broadway production" [ref=e247]:
+                - generic [ref=e248]: Go see a Broadway production
+              - cell "Task from DummyJSON API - User 7" [ref=e249]:
+                - generic [ref=e250]: Task from DummyJSON API - User 7
+              - cell "todo" [ref=e251]:
+                - generic [ref=e252]: todo
+              - cell "low" [ref=e253]:
+                - generic [ref=e254]: low
+              - cell [ref=e255]:
+                - button [ref=e256]:
+                  - img
+            - row "10 Write a thank you letter to an influential person in your life Task from DummyJSON API - User 9 in progress medium" [ref=e257]:
+              - cell "10" [ref=e258]:
+                - generic [ref=e259]: "10"
+              - cell "Write a thank you letter to an influential person in your life" [ref=e260]:
+                - generic [ref=e261]: Write a thank you letter to an influential person in your life
+              - cell "Task from DummyJSON API - User 9" [ref=e262]:
+                - generic [ref=e263]: Task from DummyJSON API - User 9
+              - cell "in progress" [ref=e264]:
+                - generic [ref=e265]: in progress
+              - cell "medium" [ref=e266]:
+                - generic [ref=e267]: medium
+              - cell [ref=e268]:
+                - button [ref=e269]:
+                  - img
+            - row "11 Invite some friends over for a game night Task from DummyJSON API - User 104 done high" [ref=e270]:
+              - cell "11" [ref=e271]:
+                - generic [ref=e272]: "11"
+              - cell "Invite some friends over for a game night" [ref=e273]:
+                - generic [ref=e274]: Invite some friends over for a game night
+              - cell "Task from DummyJSON API - User 104" [ref=e275]:
+                - generic [ref=e276]: Task from DummyJSON API - User 104
+              - cell "done" [ref=e277]:
+                - generic [ref=e278]: done
+              - cell "high" [ref=e279]:
+                - generic [ref=e280]: high
+              - cell [ref=e281]:
+                - button [ref=e282]:
+                  - img
+            - row "12 Have a football scrimmage with some friends Task from DummyJSON API - User 32 todo low" [ref=e283]:
+              - cell "12" [ref=e284]:
+                - generic [ref=e285]: "12"
+              - cell "Have a football scrimmage with some friends" [ref=e286]:
+                - generic [ref=e287]: Have a football scrimmage with some friends
+              - cell "Task from DummyJSON API - User 32" [ref=e288]:
+                - generic [ref=e289]: Task from DummyJSON API - User 32
+              - cell "todo" [ref=e290]:
+                - generic [ref=e291]: todo
+              - cell "low" [ref=e292]:
+                - generic [ref=e293]: low
+              - cell [ref=e294]:
+                - button [ref=e295]:
+                  - img
+            - row "13 Text a friend you haven't talked to in a long time Task from DummyJSON API - User 2 in progress medium" [ref=e296]:
+              - cell "13" [ref=e297]:
+                - generic [ref=e298]: "13"
+              - cell "Text a friend you haven't talked to in a long time" [ref=e299]:
+                - generic [ref=e300]: Text a friend you haven't talked to in a long time
+              - cell "Task from DummyJSON API - User 2" [ref=e301]:
+                - generic [ref=e302]: Task from DummyJSON API - User 2
+              - cell "in progress" [ref=e303]:
+                - generic [ref=e304]: in progress
+              - cell "medium" [ref=e305]:
+                - generic [ref=e306]: medium
+              - cell [ref=e307]:
+                - button [ref=e308]:
+                  - img
+            - row "14 Organize pantry Task from DummyJSON API - User 46 done high" [ref=e309]:
+              - cell "14" [ref=e310]:
+                - generic [ref=e311]: "14"
+              - cell "Organize pantry" [ref=e312]:
+                - generic [ref=e313]: Organize pantry
+              - cell "Task from DummyJSON API - User 46" [ref=e314]:
+                - generic [ref=e315]: Task from DummyJSON API - User 46
+              - cell "done" [ref=e316]:
+                - generic [ref=e317]: done
+              - cell "high" [ref=e318]:
+                - generic [ref=e319]: high
+              - cell [ref=e320]:
+                - button [ref=e321]:
+                  - img
+            - row "15 Buy a new house decoration Task from DummyJSON API - User 105 todo low" [ref=e322]:
+              - cell "15" [ref=e323]:
+                - generic [ref=e324]: "15"
+              - cell "Buy a new house decoration" [ref=e325]:
+                - generic [ref=e326]: Buy a new house decoration
+              - cell "Task from DummyJSON API - User 105" [ref=e327]:
+                - generic [ref=e328]: Task from DummyJSON API - User 105
+              - cell "todo" [ref=e329]:
+                - generic [ref=e330]: todo
+              - cell "low" [ref=e331]:
+                - generic [ref=e332]: low
+              - cell [ref=e333]:
+                - button [ref=e334]:
+                  - img
+            - row "16 Plan a vacation you've always wanted to take Task from DummyJSON API - User 162 in progress medium" [ref=e335]:
+              - cell "16" [ref=e336]:
+                - generic [ref=e337]: "16"
+              - cell "Plan a vacation you've always wanted to take" [ref=e338]:
+                - generic [ref=e339]: Plan a vacation you've always wanted to take
+              - cell "Task from DummyJSON API - User 162" [ref=e340]:
+                - generic [ref=e341]: Task from DummyJSON API - User 162
+              - cell "in progress" [ref=e342]:
+                - generic [ref=e343]: in progress
+              - cell "medium" [ref=e344]:
+                - generic [ref=e345]: medium
+              - cell [ref=e346]:
+                - button [ref=e347]:
+                  - img
+            - row "17 Clean out car Task from DummyJSON API - User 71 done high" [ref=e348]:
+              - cell "17" [ref=e349]:
+                - generic [ref=e350]: "17"
+              - cell "Clean out car" [ref=e351]:
+                - generic [ref=e352]: Clean out car
+              - cell "Task from DummyJSON API - User 71" [ref=e353]:
+                - generic [ref=e354]: Task from DummyJSON API - User 71
+              - cell "done" [ref=e355]:
+                - generic [ref=e356]: done
+              - cell "high" [ref=e357]:
+                - generic [ref=e358]: high
+              - cell [ref=e359]:
+                - button [ref=e360]:
+                  - img
+            - row "18 Draw and color a Mandala Task from DummyJSON API - User 6 todo low" [ref=e361]:
+              - cell "18" [ref=e362]:
+                - generic [ref=e363]: "18"
+              - cell "Draw and color a Mandala" [ref=e364]:
+                - generic [ref=e365]: Draw and color a Mandala
+              - cell "Task from DummyJSON API - User 6" [ref=e366]:
+                - generic [ref=e367]: Task from DummyJSON API - User 6
+              - cell "todo" [ref=e368]:
+                - generic [ref=e369]: todo
+              - cell "low" [ref=e370]:
+                - generic [ref=e371]: low
+              - cell [ref=e372]:
+                - button [ref=e373]:
+                  - img
+            - row "19 Create a cookbook with favorite recipes Task from DummyJSON API - User 53 in progress medium" [ref=e374]:
+              - cell "19" [ref=e375]:
+                - generic [ref=e376]: "19"
+              - cell "Create a cookbook with favorite recipes" [ref=e377]:
+                - generic [ref=e378]: Create a cookbook with favorite recipes
+              - cell "Task from DummyJSON API - User 53" [ref=e379]:
+                - generic [ref=e380]: Task from DummyJSON API - User 53
+              - cell "in progress" [ref=e381]:
+                - generic [ref=e382]: in progress
+              - cell "medium" [ref=e383]:
+                - generic [ref=e384]: medium
+              - cell [ref=e385]:
+                - button [ref=e386]:
+                  - img
+            - row "20 Bake a pie with some friends Task from DummyJSON API - User 162 done high" [ref=e387]:
+              - cell "20" [ref=e388]:
+                - generic [ref=e389]: "20"
+              - cell "Bake a pie with some friends" [ref=e390]:
+                - generic [ref=e391]: Bake a pie with some friends
+              - cell "Task from DummyJSON API - User 162" [ref=e392]:
+                - generic [ref=e393]: Task from DummyJSON API - User 162
+              - cell "done" [ref=e394]:
+                - generic [ref=e395]: done
+              - cell "high" [ref=e396]:
+                - generic [ref=e397]: high
+              - cell [ref=e398]:
+                - button [ref=e399]:
+                  - img
+            - row "21 Create a compost pile Task from DummyJSON API - User 13 todo low" [ref=e400]:
+              - cell "21" [ref=e401]:
+                - generic [ref=e402]: "21"
+              - cell "Create a compost pile" [ref=e403]:
+                - generic [ref=e404]: Create a compost pile
+              - cell "Task from DummyJSON API - User 13" [ref=e405]:
+                - generic [ref=e406]: Task from DummyJSON API - User 13
+              - cell "todo" [ref=e407]:
+                - generic [ref=e408]: todo
+              - cell "low" [ref=e409]:
+                - generic [ref=e410]: low
+              - cell [ref=e411]:
+                - button [ref=e412]:
+                  - img
+            - row "22 Take a hike at a local park Task from DummyJSON API - User 37 in progress medium" [ref=e413]:
+              - cell "22" [ref=e414]:
+                - generic [ref=e415]: "22"
+              - cell "Take a hike at a local park" [ref=e416]:
+                - generic [ref=e417]: Take a hike at a local park
+              - cell "Task from DummyJSON API - User 37" [ref=e418]:
+                - generic [ref=e419]: Task from DummyJSON API - User 37
+              - cell "in progress" [ref=e420]:
+                - generic [ref=e421]: in progress
+              - cell "medium" [ref=e422]:
+                - generic [ref=e423]: medium
+              - cell [ref=e424]:
+                - button [ref=e425]:
+                  - img
+            - row "23 Take a class at local community center that interests you Task from DummyJSON API - User 65 done high" [ref=e426]:
+              - cell "23" [ref=e427]:
+                - generic [ref=e428]: "23"
+              - cell "Take a class at local community center that interests you" [ref=e429]:
+                - generic [ref=e430]: Take a class at local community center that interests you
+              - cell "Task from DummyJSON API - User 65" [ref=e431]:
+                - generic [ref=e432]: Task from DummyJSON API - User 65
+              - cell "done" [ref=e433]:
+                - generic [ref=e434]: done
+              - cell "high" [ref=e435]:
+                - generic [ref=e436]: high
+              - cell [ref=e437]:
+                - button [ref=e438]:
+                  - img
+            - row "24 Research a topic interested in Task from DummyJSON API - User 130 todo low" [ref=e439]:
+              - cell "24" [ref=e440]:
+                - generic [ref=e441]: "24"
+              - cell "Research a topic interested in" [ref=e442]:
+                - generic [ref=e443]: Research a topic interested in
+              - cell "Task from DummyJSON API - User 130" [ref=e444]:
+                - generic [ref=e445]: Task from DummyJSON API - User 130
+              - cell "todo" [ref=e446]:
+                - generic [ref=e447]: todo
+              - cell "low" [ref=e448]:
+                - generic [ref=e449]: low
+              - cell [ref=e450]:
+                - button [ref=e451]:
+                  - img
+            - row "25 Plan a trip to another country Task from DummyJSON API - User 140 in progress medium" [ref=e452]:
+              - cell "25" [ref=e453]:
+                - generic [ref=e454]: "25"
+              - cell "Plan a trip to another country" [ref=e455]:
+                - generic [ref=e456]: Plan a trip to another country
+              - cell "Task from DummyJSON API - User 140" [ref=e457]:
+                - generic [ref=e458]: Task from DummyJSON API - User 140
+              - cell "in progress" [ref=e459]:
+                - generic [ref=e460]: in progress
+              - cell "medium" [ref=e461]:
+                - generic [ref=e462]: medium
+              - cell [ref=e463]:
+                - button [ref=e464]:
+                  - img
+            - row "26 Improve touch typing Task from DummyJSON API - User 178 done high" [ref=e465]:
+              - cell "26" [ref=e466]:
+                - generic [ref=e467]: "26"
+              - cell "Improve touch typing" [ref=e468]:
+                - generic [ref=e469]: Improve touch typing
+              - cell "Task from DummyJSON API - User 178" [ref=e470]:
+                - generic [ref=e471]: Task from DummyJSON API - User 178
+              - cell "done" [ref=e472]:
+                - generic [ref=e473]: done
+              - cell "high" [ref=e474]:
+                - generic [ref=e475]: high
+              - cell [ref=e476]:
+                - button [ref=e477]:
+                  - img
+            - row "27 Learn Express.js Task from DummyJSON API - User 194 todo low" [ref=e478]:
+              - cell "27" [ref=e479]:
+                - generic [ref=e480]: "27"
+              - cell "Learn Express.js" [ref=e481]:
+                - generic [ref=e482]: Learn Express.js
+              - cell "Task from DummyJSON API - User 194" [ref=e483]:
+                - generic [ref=e484]: Task from DummyJSON API - User 194
+              - cell "todo" [ref=e485]:
+                - generic [ref=e486]: todo
+              - cell "low" [ref=e487]:
+                - generic [ref=e488]: low
+              - cell [ref=e489]:
+                - button [ref=e490]:
+                  - img
+            - row "28 Learn calligraphy Task from DummyJSON API - User 80 in progress medium" [ref=e491]:
+              - cell "28" [ref=e492]:
+                - generic [ref=e493]: "28"
+              - cell "Learn calligraphy" [ref=e494]:
+                - generic [ref=e495]: Learn calligraphy
+              - cell "Task from DummyJSON API - User 80" [ref=e496]:
+                - generic [ref=e497]: Task from DummyJSON API - User 80
+              - cell "in progress" [ref=e498]:
+                - generic [ref=e499]: in progress
+              - cell "medium" [ref=e500]:
+                - generic [ref=e501]: medium
+              - cell [ref=e502]:
+                - button [ref=e503]:
+                  - img
+            - row "29 Have a photo session with some friends Task from DummyJSON API - User 91 done high" [ref=e504]:
+              - cell "29" [ref=e505]:
+                - generic [ref=e506]: "29"
+              - cell "Have a photo session with some friends" [ref=e507]:
+                - generic [ref=e508]: Have a photo session with some friends
+              - cell "Task from DummyJSON API - User 91" [ref=e509]:
+                - generic [ref=e510]: Task from DummyJSON API - User 91
+              - cell "done" [ref=e511]:
+                - generic [ref=e512]: done
+              - cell "high" [ref=e513]:
+                - generic [ref=e514]: high
+              - cell [ref=e515]:
+                - button [ref=e516]:
+                  - img
+            - row "30 Go to the gym Task from DummyJSON API - User 142 todo low" [ref=e517]:
+              - cell "30" [ref=e518]:
+                - generic [ref=e519]: "30"
+              - cell "Go to the gym" [ref=e520]:
+                - generic [ref=e521]: Go to the gym
+              - cell "Task from DummyJSON API - User 142" [ref=e522]:
+                - generic [ref=e523]: Task from DummyJSON API - User 142
+              - cell "todo" [ref=e524]:
+                - generic [ref=e525]: todo
+              - cell "low" [ref=e526]:
+                - generic [ref=e527]: low
+              - cell [ref=e528]:
+                - button [ref=e529]:
+                  - img
+```

@@ -15,7 +15,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["jest", "@testing-library/jest-dom"],
+    "esModuleInterop": true,
+    "types": ["jest", "@testing-library/jest-dom", "node", "@playwright/test"],
 
     "paths": {
       "@/*": ["./src/*"],
@@ -25,6 +26,6 @@
       "@/lib/*": ["./src/lib/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "e2e", "playwright.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

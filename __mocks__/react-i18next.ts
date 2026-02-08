@@ -1,30 +1,22 @@
-export const useTranslation = () => ({
-  t: (key: string) => {
-    const translations: Record<string, string> = {
-      createTask: "Create Task",
-      editTask: "Edit Task",
-      updateTask: "Update Task Details",
-      SubTitle: "Fill in the details to create a new task",
-      title: "Title",
-      titleRequired: "Title is required",
-      enterTitle: "Enter task title",
-      description: "Description",
-      enterDescription: "Enter task description",
-      status: "Status",
-      priority: "Priority",
-      todo: "To Do",
-      inProgress: "In Progress",
-      done: "Done",
-      low: "Low",
-      medium: "Medium",
-      high: "High",
-      cancel: "Cancel"
-    }
-    return translations[key] || key
-  },
+const useTranslation = () => ({
+  t: (key: string) => key,
   i18n: {
-    changeLanguage: () => new Promise(() => {})
+    changeLanguage: () => Promise.resolve(),
+    language: "en"
   }
 })
 
-export const Trans = ({ children }: { children: React.ReactNode }) => children
+const Trans = ({ children }: { children: React.ReactNode }) => children
+
+const initReactI18next = {
+  type: "3rdParty",
+  init: () => {}
+}
+
+export default {
+  useTranslation,
+  Trans,
+  initReactI18next
+}
+
+export { initReactI18next, Trans, useTranslation }

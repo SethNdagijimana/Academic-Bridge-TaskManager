@@ -1,0 +1,828 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e6]:
+      - img [ref=e8]
+      - generic [ref=e13]: Task Manager
+    - navigation [ref=e14]:
+      - generic [ref=e15]:
+        - link "Dashboard" [ref=e16] [cursor=pointer]:
+          - /url: /
+          - button "Dashboard" [ref=e18]:
+            - img
+            - generic [ref=e19]: Dashboard
+        - link "Board" [ref=e20] [cursor=pointer]:
+          - /url: /board
+          - button "Board" [ref=e22]:
+            - img
+            - generic [ref=e23]: Board
+        - link "List" [ref=e24] [cursor=pointer]:
+          - /url: /list
+          - button "List" [ref=e26]:
+            - img
+            - generic [ref=e27]: List
+        - link "Calendar" [ref=e28] [cursor=pointer]:
+          - /url: /calendar
+          - button "Calendar" [ref=e30]:
+            - img
+            - generic [ref=e31]: Calendar
+        - link "Team" [ref=e32] [cursor=pointer]:
+          - /url: /team
+          - button "Team" [ref=e34]:
+            - img
+            - generic [ref=e35]: Team
+      - generic [ref=e36]:
+        - paragraph [ref=e38]: Recent Pages
+        - generic [ref=e39]:
+          - button "World Comp" [ref=e41]:
+            - generic [ref=e43]: World Comp
+            - img
+          - button "Arcelor Group" [ref=e45]:
+            - generic [ref=e47]: Arcelor Group
+            - img
+          - button "IB Talks Hub" [ref=e49]:
+            - generic [ref=e51]: IB Talks Hub
+            - img
+          - button "Endevis Tamodek" [ref=e53]:
+            - generic [ref=e55]: Endevis Tamodek
+            - img
+      - generic [ref=e56]:
+        - paragraph [ref=e58]: Recent Projects
+        - generic [ref=e59]:
+          - button "HR Tasks Hub" [ref=e61]:
+            - generic [ref=e63]: HR Tasks Hub
+          - button "WHMCS Panel" [ref=e65]:
+            - generic [ref=e67]: WHMCS Panel
+          - button "Marketing Campaign" [ref=e69]:
+            - generic [ref=e71]: Marketing Campaign
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - img [ref=e78]
+        - generic [ref=e79]:
+          - paragraph [ref=e80]: Seth N.
+          - paragraph [ref=e81]: seth@example.com
+      - paragraph [ref=e82]:
+        - img [ref=e83]
+        - text: Maximize your potential
+      - button "Upgrade Now" [ref=e86]
+  - generic [ref=e87]:
+    - banner [ref=e88]:
+      - generic [ref=e89]:
+        - generic [ref=e91]:
+          - img [ref=e92]
+          - textbox "Search tasks, projects..." [ref=e95]
+        - generic [ref=e96]:
+          - button [ref=e98]:
+            - img
+          - button [ref=e100]:
+            - img
+          - button [ref=e102]:
+            - generic [ref=e103]:
+              - img
+    - main [ref=e104]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: HR Tasks Hub
+              - paragraph [ref=e111]: Track and manage your team's workflow
+            - generic [ref=e112]:
+              - button "Filter" [ref=e113]:
+                - img
+                - text: Filter
+              - button "View" [ref=e114]:
+                - img
+                - text: View
+              - button "Team" [ref=e115]:
+                - img
+                - text: Team
+              - button "Add Task" [ref=e117]:
+                - img
+                - text: Add Task
+          - generic [ref=e118]:
+            - generic [ref=e119] [cursor=pointer]:
+              - paragraph [ref=e121]: Total Tasks
+              - paragraph [ref=e122]: "30"
+            - generic [ref=e123] [cursor=pointer]:
+              - paragraph [ref=e125]: To Do
+              - paragraph [ref=e126]: "10"
+            - generic [ref=e127] [cursor=pointer]:
+              - paragraph [ref=e129]: In Progress
+              - paragraph [ref=e130]: "10"
+            - generic [ref=e131] [cursor=pointer]:
+              - paragraph [ref=e133]: Completed
+              - paragraph [ref=e134]: "10"
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - generic [ref=e139]:
+                - generic [ref=e140]:
+                  - generic [ref=e141]: 📋
+                  - paragraph [ref=e142]: To Do
+                  - generic [ref=e143]: "10"
+                - button [ref=e144]:
+                  - img
+              - generic [ref=e145]:
+                - button "LOW api dummy Watch a classic movie Task from DummyJSON API - User 68 Progress 0% in 14 days User 68" [active] [pressed] [ref=e146]:
+                  - generic [ref=e148]:
+                    - generic [ref=e150]:
+                      - generic [ref=e151]:
+                        - generic [ref=e152]:
+                          - generic [ref=e153]: LOW
+                          - generic [ref=e154]: api
+                          - generic [ref=e155]: dummy
+                        - heading "Watch a classic movie" [level=3] [ref=e156]
+                        - paragraph [ref=e157]: Task from DummyJSON API - User 68
+                      - button [ref=e158]:
+                        - img
+                    - generic [ref=e159]:
+                      - generic [ref=e160]:
+                        - generic [ref=e161]: Progress
+                        - generic [ref=e162]: 0%
+                      - progressbar [ref=e163]
+                    - generic [ref=e165]:
+                      - generic [ref=e167]:
+                        - img [ref=e168]
+                        - generic [ref=e171]: in 14 days
+                      - img "User 68" [ref=e175]
+                - button "LOW api dummy Contribute code or a monetary donation to an open-source software project Task from DummyJSON API - User 69 Progress 0% in 9 days User 69" [ref=e176]:
+                  - generic [ref=e178]:
+                    - generic [ref=e180]:
+                      - generic [ref=e181]:
+                        - generic [ref=e182]:
+                          - generic [ref=e183]: LOW
+                          - generic [ref=e184]: api
+                          - generic [ref=e185]: dummy
+                        - heading "Contribute code or a monetary donation to an open-source software project" [level=3] [ref=e186]
+                        - paragraph [ref=e187]: Task from DummyJSON API - User 69
+                      - button [ref=e188]:
+                        - img
+                    - generic [ref=e189]:
+                      - generic [ref=e190]:
+                        - generic [ref=e191]: Progress
+                        - generic [ref=e192]: 0%
+                      - progressbar [ref=e193]
+                    - generic [ref=e195]:
+                      - generic [ref=e197]:
+                        - img [ref=e198]
+                        - generic [ref=e201]: in 9 days
+                      - img "User 69" [ref=e205]
+                - button "LOW api dummy Go see a Broadway production Task from DummyJSON API - User 7 Progress 0% in 9 days User 7" [ref=e206]:
+                  - generic [ref=e208]:
+                    - generic [ref=e210]:
+                      - generic [ref=e211]:
+                        - generic [ref=e212]:
+                          - generic [ref=e213]: LOW
+                          - generic [ref=e214]: api
+                          - generic [ref=e215]: dummy
+                        - heading "Go see a Broadway production" [level=3] [ref=e216]
+                        - paragraph [ref=e217]: Task from DummyJSON API - User 7
+                      - button [ref=e218]:
+                        - img
+                    - generic [ref=e219]:
+                      - generic [ref=e220]:
+                        - generic [ref=e221]: Progress
+                        - generic [ref=e222]: 0%
+                      - progressbar [ref=e223]
+                    - generic [ref=e225]:
+                      - generic [ref=e227]:
+                        - img [ref=e228]
+                        - generic [ref=e231]: in 9 days
+                      - img "User 7" [ref=e235]
+                - button "LOW api dummy Have a football scrimmage with some friends Task from DummyJSON API - User 32 Progress 0% in 1 day User 32" [ref=e236]:
+                  - generic [ref=e238]:
+                    - generic [ref=e240]:
+                      - generic [ref=e241]:
+                        - generic [ref=e242]:
+                          - generic [ref=e243]: LOW
+                          - generic [ref=e244]: api
+                          - generic [ref=e245]: dummy
+                        - heading "Have a football scrimmage with some friends" [level=3] [ref=e246]
+                        - paragraph [ref=e247]: Task from DummyJSON API - User 32
+                      - button [ref=e248]:
+                        - img
+                    - generic [ref=e249]:
+                      - generic [ref=e250]:
+                        - generic [ref=e251]: Progress
+                        - generic [ref=e252]: 0%
+                      - progressbar [ref=e253]
+                    - generic [ref=e255]:
+                      - generic [ref=e257]:
+                        - img [ref=e258]
+                        - generic [ref=e261]: in 1 day
+                      - img "User 32" [ref=e265]
+                - button "LOW api dummy Buy a new house decoration Task from DummyJSON API - User 105 Progress 0% in 4 days User 105" [ref=e266]:
+                  - generic [ref=e268]:
+                    - generic [ref=e270]:
+                      - generic [ref=e271]:
+                        - generic [ref=e272]:
+                          - generic [ref=e273]: LOW
+                          - generic [ref=e274]: api
+                          - generic [ref=e275]: dummy
+                        - heading "Buy a new house decoration" [level=3] [ref=e276]
+                        - paragraph [ref=e277]: Task from DummyJSON API - User 105
+                      - button [ref=e278]:
+                        - img
+                    - generic [ref=e279]:
+                      - generic [ref=e280]:
+                        - generic [ref=e281]: Progress
+                        - generic [ref=e282]: 0%
+                      - progressbar [ref=e283]
+                    - generic [ref=e285]:
+                      - generic [ref=e287]:
+                        - img [ref=e288]
+                        - generic [ref=e291]: in 4 days
+                      - img "User 105" [ref=e295]
+                - button "LOW api dummy Draw and color a Mandala Task from DummyJSON API - User 6 Progress 0% in 1 day User 6" [ref=e296]:
+                  - generic [ref=e298]:
+                    - generic [ref=e300]:
+                      - generic [ref=e301]:
+                        - generic [ref=e302]:
+                          - generic [ref=e303]: LOW
+                          - generic [ref=e304]: api
+                          - generic [ref=e305]: dummy
+                        - heading "Draw and color a Mandala" [level=3] [ref=e306]
+                        - paragraph [ref=e307]: Task from DummyJSON API - User 6
+                      - button [ref=e308]:
+                        - img
+                    - generic [ref=e309]:
+                      - generic [ref=e310]:
+                        - generic [ref=e311]: Progress
+                        - generic [ref=e312]: 0%
+                      - progressbar [ref=e313]
+                    - generic [ref=e315]:
+                      - generic [ref=e317]:
+                        - img [ref=e318]
+                        - generic [ref=e321]: in 1 day
+                      - img "User 6" [ref=e325]
+                - button "LOW api dummy Create a compost pile Task from DummyJSON API - User 13 Progress 0% in 13 days User 13" [ref=e326]:
+                  - generic [ref=e328]:
+                    - generic [ref=e330]:
+                      - generic [ref=e331]:
+                        - generic [ref=e332]:
+                          - generic [ref=e333]: LOW
+                          - generic [ref=e334]: api
+                          - generic [ref=e335]: dummy
+                        - heading "Create a compost pile" [level=3] [ref=e336]
+                        - paragraph [ref=e337]: Task from DummyJSON API - User 13
+                      - button [ref=e338]:
+                        - img
+                    - generic [ref=e339]:
+                      - generic [ref=e340]:
+                        - generic [ref=e341]: Progress
+                        - generic [ref=e342]: 0%
+                      - progressbar [ref=e343]
+                    - generic [ref=e345]:
+                      - generic [ref=e347]:
+                        - img [ref=e348]
+                        - generic [ref=e351]: in 13 days
+                      - img "User 13" [ref=e355]
+                - button "LOW api dummy Research a topic interested in Task from DummyJSON API - User 130 Progress 0% in 5 days User 130" [ref=e356]:
+                  - generic [ref=e358]:
+                    - generic [ref=e360]:
+                      - generic [ref=e361]:
+                        - generic [ref=e362]:
+                          - generic [ref=e363]: LOW
+                          - generic [ref=e364]: api
+                          - generic [ref=e365]: dummy
+                        - heading "Research a topic interested in" [level=3] [ref=e366]
+                        - paragraph [ref=e367]: Task from DummyJSON API - User 130
+                      - button [ref=e368]:
+                        - img
+                    - generic [ref=e369]:
+                      - generic [ref=e370]:
+                        - generic [ref=e371]: Progress
+                        - generic [ref=e372]: 0%
+                      - progressbar [ref=e373]
+                    - generic [ref=e375]:
+                      - generic [ref=e377]:
+                        - img [ref=e378]
+                        - generic [ref=e381]: in 5 days
+                      - img "User 130" [ref=e385]
+                - button "LOW api dummy Learn Express.js Task from DummyJSON API - User 194 Progress 0% in 9 days User 194" [ref=e386]:
+                  - generic [ref=e388]:
+                    - generic [ref=e390]:
+                      - generic [ref=e391]:
+                        - generic [ref=e392]:
+                          - generic [ref=e393]: LOW
+                          - generic [ref=e394]: api
+                          - generic [ref=e395]: dummy
+                        - heading "Learn Express.js" [level=3] [ref=e396]
+                        - paragraph [ref=e397]: Task from DummyJSON API - User 194
+                      - button [ref=e398]:
+                        - img
+                    - generic [ref=e399]:
+                      - generic [ref=e400]:
+                        - generic [ref=e401]: Progress
+                        - generic [ref=e402]: 0%
+                      - progressbar [ref=e403]
+                    - generic [ref=e405]:
+                      - generic [ref=e407]:
+                        - img [ref=e408]
+                        - generic [ref=e411]: in 9 days
+                      - img "User 194" [ref=e415]
+                - button "LOW api dummy Go to the gym Task from DummyJSON API - User 142 Progress 0% in 13 days User 142" [ref=e416]:
+                  - generic [ref=e418]:
+                    - generic [ref=e420]:
+                      - generic [ref=e421]:
+                        - generic [ref=e422]:
+                          - generic [ref=e423]: LOW
+                          - generic [ref=e424]: api
+                          - generic [ref=e425]: dummy
+                        - heading "Go to the gym" [level=3] [ref=e426]
+                        - paragraph [ref=e427]: Task from DummyJSON API - User 142
+                      - button [ref=e428]:
+                        - img
+                    - generic [ref=e429]:
+                      - generic [ref=e430]:
+                        - generic [ref=e431]: Progress
+                        - generic [ref=e432]: 0%
+                      - progressbar [ref=e433]
+                    - generic [ref=e435]:
+                      - generic [ref=e437]:
+                        - img [ref=e438]
+                        - generic [ref=e441]: in 13 days
+                      - img "User 142" [ref=e445]
+            - generic [ref=e446]:
+              - generic [ref=e448]:
+                - generic [ref=e449]:
+                  - generic [ref=e450]: ⚡
+                  - paragraph [ref=e451]: In Progress
+                  - generic [ref=e452]: "10"
+                - button [ref=e453]:
+                  - img
+              - generic [ref=e454]:
+                - button "MEDIUM api dummy Do something nice for someone you care about Task from DummyJSON API - User 152 Progress 34% in 8 days User 152" [ref=e455]:
+                  - generic [ref=e457]:
+                    - generic [ref=e459]:
+                      - generic [ref=e460]:
+                        - generic [ref=e461]:
+                          - generic [ref=e462]: MEDIUM
+                          - generic [ref=e463]: api
+                          - generic [ref=e464]: dummy
+                        - heading "Do something nice for someone you care about" [level=3] [ref=e465]
+                        - paragraph [ref=e466]: Task from DummyJSON API - User 152
+                      - button [ref=e467]:
+                        - img
+                    - generic [ref=e468]:
+                      - generic [ref=e469]:
+                        - generic [ref=e470]: Progress
+                        - generic [ref=e471]: 34%
+                      - progressbar [ref=e472]
+                    - generic [ref=e474]:
+                      - generic [ref=e476]:
+                        - img [ref=e477]
+                        - generic [ref=e480]: in 8 days
+                      - img "User 152" [ref=e484]
+                - button "MEDIUM api dummy Watch a documentary Task from DummyJSON API - User 84 Progress 54% in 2 days User 84" [ref=e485]:
+                  - generic [ref=e487]:
+                    - generic [ref=e489]:
+                      - generic [ref=e490]:
+                        - generic [ref=e491]:
+                          - generic [ref=e492]: MEDIUM
+                          - generic [ref=e493]: api
+                          - generic [ref=e494]: dummy
+                        - heading "Watch a documentary" [level=3] [ref=e495]
+                        - paragraph [ref=e496]: Task from DummyJSON API - User 84
+                      - button [ref=e497]:
+                        - img
+                    - generic [ref=e498]:
+                      - generic [ref=e499]:
+                        - generic [ref=e500]: Progress
+                        - generic [ref=e501]: 54%
+                      - progressbar [ref=e502]
+                    - generic [ref=e504]:
+                      - generic [ref=e506]:
+                        - img [ref=e507]
+                        - generic [ref=e510]: in 2 days
+                      - img "User 84" [ref=e514]
+                - button "MEDIUM api dummy Solve a Rubik's cube Task from DummyJSON API - User 76 Progress 42% in 5 days User 76" [ref=e515]:
+                  - generic [ref=e517]:
+                    - generic [ref=e519]:
+                      - generic [ref=e520]:
+                        - generic [ref=e521]:
+                          - generic [ref=e522]: MEDIUM
+                          - generic [ref=e523]: api
+                          - generic [ref=e524]: dummy
+                        - heading "Solve a Rubik's cube" [level=3] [ref=e525]
+                        - paragraph [ref=e526]: Task from DummyJSON API - User 76
+                      - button [ref=e527]:
+                        - img
+                    - generic [ref=e528]:
+                      - generic [ref=e529]:
+                        - generic [ref=e530]: Progress
+                        - generic [ref=e531]: 42%
+                      - progressbar [ref=e532]
+                    - generic [ref=e534]:
+                      - generic [ref=e536]:
+                        - img [ref=e537]
+                        - generic [ref=e540]: in 5 days
+                      - img "User 76" [ref=e544]
+                - button "MEDIUM api dummy Write a thank you letter to an influential person in your life Task from DummyJSON API - User 9 Progress 75% in 11 days User 9" [ref=e545]:
+                  - generic [ref=e547]:
+                    - generic [ref=e549]:
+                      - generic [ref=e550]:
+                        - generic [ref=e551]:
+                          - generic [ref=e552]: MEDIUM
+                          - generic [ref=e553]: api
+                          - generic [ref=e554]: dummy
+                        - heading "Write a thank you letter to an influential person in your life" [level=3] [ref=e555]
+                        - paragraph [ref=e556]: Task from DummyJSON API - User 9
+                      - button [ref=e557]:
+                        - img
+                    - generic [ref=e558]:
+                      - generic [ref=e559]:
+                        - generic [ref=e560]: Progress
+                        - generic [ref=e561]: 75%
+                      - progressbar [ref=e562]
+                    - generic [ref=e564]:
+                      - generic [ref=e566]:
+                        - img [ref=e567]
+                        - generic [ref=e570]: in 11 days
+                      - img "User 9" [ref=e574]
+                - button "MEDIUM api dummy Text a friend you haven't talked to in a long time Task from DummyJSON API - User 2 Progress 33% in 1 day User 2" [ref=e575]:
+                  - generic [ref=e577]:
+                    - generic [ref=e579]:
+                      - generic [ref=e580]:
+                        - generic [ref=e581]:
+                          - generic [ref=e582]: MEDIUM
+                          - generic [ref=e583]: api
+                          - generic [ref=e584]: dummy
+                        - heading "Text a friend you haven't talked to in a long time" [level=3] [ref=e585]
+                        - paragraph [ref=e586]: Task from DummyJSON API - User 2
+                      - button [ref=e587]:
+                        - img
+                    - generic [ref=e588]:
+                      - generic [ref=e589]:
+                        - generic [ref=e590]: Progress
+                        - generic [ref=e591]: 33%
+                      - progressbar [ref=e592]
+                    - generic [ref=e594]:
+                      - generic [ref=e596]:
+                        - img [ref=e597]
+                        - generic [ref=e600]: in 1 day
+                      - img "User 2" [ref=e604]
+                - button "MEDIUM api dummy Plan a vacation you've always wanted to take Task from DummyJSON API - User 162 Progress 57% in 5 days User 162" [ref=e605]:
+                  - generic [ref=e607]:
+                    - generic [ref=e609]:
+                      - generic [ref=e610]:
+                        - generic [ref=e611]:
+                          - generic [ref=e612]: MEDIUM
+                          - generic [ref=e613]: api
+                          - generic [ref=e614]: dummy
+                        - heading "Plan a vacation you've always wanted to take" [level=3] [ref=e615]
+                        - paragraph [ref=e616]: Task from DummyJSON API - User 162
+                      - button [ref=e617]:
+                        - img
+                    - generic [ref=e618]:
+                      - generic [ref=e619]:
+                        - generic [ref=e620]: Progress
+                        - generic [ref=e621]: 57%
+                      - progressbar [ref=e622]
+                    - generic [ref=e624]:
+                      - generic [ref=e626]:
+                        - img [ref=e627]
+                        - generic [ref=e630]: in 5 days
+                      - img "User 162" [ref=e634]
+                - button "MEDIUM api dummy Create a cookbook with favorite recipes Task from DummyJSON API - User 53 Progress 51% in 3 days User 53" [ref=e635]:
+                  - generic [ref=e637]:
+                    - generic [ref=e639]:
+                      - generic [ref=e640]:
+                        - generic [ref=e641]:
+                          - generic [ref=e642]: MEDIUM
+                          - generic [ref=e643]: api
+                          - generic [ref=e644]: dummy
+                        - heading "Create a cookbook with favorite recipes" [level=3] [ref=e645]
+                        - paragraph [ref=e646]: Task from DummyJSON API - User 53
+                      - button [ref=e647]:
+                        - img
+                    - generic [ref=e648]:
+                      - generic [ref=e649]:
+                        - generic [ref=e650]: Progress
+                        - generic [ref=e651]: 51%
+                      - progressbar [ref=e652]
+                    - generic [ref=e654]:
+                      - generic [ref=e656]:
+                        - img [ref=e657]
+                        - generic [ref=e660]: in 3 days
+                      - img "User 53" [ref=e664]
+                - button "MEDIUM api dummy Take a hike at a local park Task from DummyJSON API - User 37 Progress 75% in 3 days User 37" [ref=e665]:
+                  - generic [ref=e667]:
+                    - generic [ref=e669]:
+                      - generic [ref=e670]:
+                        - generic [ref=e671]:
+                          - generic [ref=e672]: MEDIUM
+                          - generic [ref=e673]: api
+                          - generic [ref=e674]: dummy
+                        - heading "Take a hike at a local park" [level=3] [ref=e675]
+                        - paragraph [ref=e676]: Task from DummyJSON API - User 37
+                      - button [ref=e677]:
+                        - img
+                    - generic [ref=e678]:
+                      - generic [ref=e679]:
+                        - generic [ref=e680]: Progress
+                        - generic [ref=e681]: 75%
+                      - progressbar [ref=e682]
+                    - generic [ref=e684]:
+                      - generic [ref=e686]:
+                        - img [ref=e687]
+                        - generic [ref=e690]: in 3 days
+                      - img "User 37" [ref=e694]
+                - button "MEDIUM api dummy Plan a trip to another country Task from DummyJSON API - User 140 Progress 70% in 3 days User 140" [ref=e695]:
+                  - generic [ref=e697]:
+                    - generic [ref=e699]:
+                      - generic [ref=e700]:
+                        - generic [ref=e701]:
+                          - generic [ref=e702]: MEDIUM
+                          - generic [ref=e703]: api
+                          - generic [ref=e704]: dummy
+                        - heading "Plan a trip to another country" [level=3] [ref=e705]
+                        - paragraph [ref=e706]: Task from DummyJSON API - User 140
+                      - button [ref=e707]:
+                        - img
+                    - generic [ref=e708]:
+                      - generic [ref=e709]:
+                        - generic [ref=e710]: Progress
+                        - generic [ref=e711]: 70%
+                      - progressbar [ref=e712]
+                    - generic [ref=e714]:
+                      - generic [ref=e716]:
+                        - img [ref=e717]
+                        - generic [ref=e720]: in 3 days
+                      - img "User 140" [ref=e724]
+                - button "MEDIUM api dummy Learn calligraphy Task from DummyJSON API - User 80 Progress 73% in 12 days User 80" [ref=e725]:
+                  - generic [ref=e727]:
+                    - generic [ref=e729]:
+                      - generic [ref=e730]:
+                        - generic [ref=e731]:
+                          - generic [ref=e732]: MEDIUM
+                          - generic [ref=e733]: api
+                          - generic [ref=e734]: dummy
+                        - heading "Learn calligraphy" [level=3] [ref=e735]
+                        - paragraph [ref=e736]: Task from DummyJSON API - User 80
+                      - button [ref=e737]:
+                        - img
+                    - generic [ref=e738]:
+                      - generic [ref=e739]:
+                        - generic [ref=e740]: Progress
+                        - generic [ref=e741]: 73%
+                      - progressbar [ref=e742]
+                    - generic [ref=e744]:
+                      - generic [ref=e746]:
+                        - img [ref=e747]
+                        - generic [ref=e750]: in 12 days
+                      - img "User 80" [ref=e754]
+            - generic [ref=e755]:
+              - generic [ref=e757]:
+                - generic [ref=e758]:
+                  - generic [ref=e759]: ✅
+                  - paragraph [ref=e760]: Done
+                  - generic [ref=e761]: "10"
+                - button [ref=e762]:
+                  - img
+              - generic [ref=e763]:
+                - button "HIGH api dummy Memorize a poem Task from DummyJSON API - User 13 Progress 100% in 14 days User 13" [ref=e764]:
+                  - generic [ref=e766]:
+                    - generic [ref=e768]:
+                      - generic [ref=e769]:
+                        - generic [ref=e770]:
+                          - generic [ref=e771]: HIGH
+                          - generic [ref=e772]: api
+                          - generic [ref=e773]: dummy
+                        - heading "Memorize a poem" [level=3] [ref=e774]
+                        - paragraph [ref=e775]: Task from DummyJSON API - User 13
+                      - button [ref=e776]:
+                        - img
+                    - generic [ref=e777]:
+                      - generic [ref=e778]:
+                        - generic [ref=e779]: Progress
+                        - generic [ref=e780]: 100%
+                      - progressbar [ref=e781]
+                    - generic [ref=e783]:
+                      - generic [ref=e785]:
+                        - img [ref=e786]
+                        - generic [ref=e789]: in 14 days
+                      - img "User 13" [ref=e793]
+                - button "HIGH api dummy Invest in cryptocurrency Task from DummyJSON API - User 163 Progress 100% in 4 days User 163" [ref=e794]:
+                  - generic [ref=e796]:
+                    - generic [ref=e798]:
+                      - generic [ref=e799]:
+                        - generic [ref=e800]:
+                          - generic [ref=e801]: HIGH
+                          - generic [ref=e802]: api
+                          - generic [ref=e803]: dummy
+                        - heading "Invest in cryptocurrency" [level=3] [ref=e804]
+                        - paragraph [ref=e805]: Task from DummyJSON API - User 163
+                      - button [ref=e806]:
+                        - img
+                    - generic [ref=e807]:
+                      - generic [ref=e808]:
+                        - generic [ref=e809]: Progress
+                        - generic [ref=e810]: 100%
+                      - progressbar [ref=e811]
+                    - generic [ref=e813]:
+                      - generic [ref=e815]:
+                        - img [ref=e816]
+                        - generic [ref=e819]: in 4 days
+                      - img "User 163" [ref=e823]
+                - button "HIGH api dummy Bake pastries for yourself and neighbor Task from DummyJSON API - User 198 Progress 100% in about 10 hours User 198" [ref=e824]:
+                  - generic [ref=e826]:
+                    - generic [ref=e828]:
+                      - generic [ref=e829]:
+                        - generic [ref=e830]:
+                          - generic [ref=e831]: HIGH
+                          - generic [ref=e832]: api
+                          - generic [ref=e833]: dummy
+                        - heading "Bake pastries for yourself and neighbor" [level=3] [ref=e834]
+                        - paragraph [ref=e835]: Task from DummyJSON API - User 198
+                      - button [ref=e836]:
+                        - img
+                    - generic [ref=e837]:
+                      - generic [ref=e838]:
+                        - generic [ref=e839]: Progress
+                        - generic [ref=e840]: 100%
+                      - progressbar [ref=e841]
+                    - generic [ref=e843]:
+                      - generic [ref=e845]:
+                        - img [ref=e846]
+                        - generic [ref=e849]: in about 10 hours
+                      - img "User 198" [ref=e853]
+                - button "HIGH api dummy Invite some friends over for a game night Task from DummyJSON API - User 104 Progress 100% in 14 days User 104" [ref=e854]:
+                  - generic [ref=e856]:
+                    - generic [ref=e858]:
+                      - generic [ref=e859]:
+                        - generic [ref=e860]:
+                          - generic [ref=e861]: HIGH
+                          - generic [ref=e862]: api
+                          - generic [ref=e863]: dummy
+                        - heading "Invite some friends over for a game night" [level=3] [ref=e864]
+                        - paragraph [ref=e865]: Task from DummyJSON API - User 104
+                      - button [ref=e866]:
+                        - img
+                    - generic [ref=e867]:
+                      - generic [ref=e868]:
+                        - generic [ref=e869]: Progress
+                        - generic [ref=e870]: 100%
+                      - progressbar [ref=e871]
+                    - generic [ref=e873]:
+                      - generic [ref=e875]:
+                        - img [ref=e876]
+                        - generic [ref=e879]: in 14 days
+                      - img "User 104" [ref=e883]
+                - button "HIGH api dummy Organize pantry Task from DummyJSON API - User 46 Progress 100% in 4 days User 46" [ref=e884]:
+                  - generic [ref=e886]:
+                    - generic [ref=e888]:
+                      - generic [ref=e889]:
+                        - generic [ref=e890]:
+                          - generic [ref=e891]: HIGH
+                          - generic [ref=e892]: api
+                          - generic [ref=e893]: dummy
+                        - heading "Organize pantry" [level=3] [ref=e894]
+                        - paragraph [ref=e895]: Task from DummyJSON API - User 46
+                      - button [ref=e896]:
+                        - img
+                    - generic [ref=e897]:
+                      - generic [ref=e898]:
+                        - generic [ref=e899]: Progress
+                        - generic [ref=e900]: 100%
+                      - progressbar [ref=e901]
+                    - generic [ref=e903]:
+                      - generic [ref=e905]:
+                        - img [ref=e906]
+                        - generic [ref=e909]: in 4 days
+                      - img "User 46" [ref=e913]
+                - button "HIGH api dummy Clean out car Task from DummyJSON API - User 71 Progress 100% in about 11 hours User 71" [ref=e914]:
+                  - generic [ref=e916]:
+                    - generic [ref=e918]:
+                      - generic [ref=e919]:
+                        - generic [ref=e920]:
+                          - generic [ref=e921]: HIGH
+                          - generic [ref=e922]: api
+                          - generic [ref=e923]: dummy
+                        - heading "Clean out car" [level=3] [ref=e924]
+                        - paragraph [ref=e925]: Task from DummyJSON API - User 71
+                      - button [ref=e926]:
+                        - img
+                    - generic [ref=e927]:
+                      - generic [ref=e928]:
+                        - generic [ref=e929]: Progress
+                        - generic [ref=e930]: 100%
+                      - progressbar [ref=e931]
+                    - generic [ref=e933]:
+                      - generic [ref=e935]:
+                        - img [ref=e936]
+                        - generic [ref=e939]: in about 11 hours
+                      - img "User 71" [ref=e943]
+                - button "HIGH api dummy Bake a pie with some friends Task from DummyJSON API - User 162 Progress 100% in 3 days User 162" [ref=e944]:
+                  - generic [ref=e946]:
+                    - generic [ref=e948]:
+                      - generic [ref=e949]:
+                        - generic [ref=e950]:
+                          - generic [ref=e951]: HIGH
+                          - generic [ref=e952]: api
+                          - generic [ref=e953]: dummy
+                        - heading "Bake a pie with some friends" [level=3] [ref=e954]
+                        - paragraph [ref=e955]: Task from DummyJSON API - User 162
+                      - button [ref=e956]:
+                        - img
+                    - generic [ref=e957]:
+                      - generic [ref=e958]:
+                        - generic [ref=e959]: Progress
+                        - generic [ref=e960]: 100%
+                      - progressbar [ref=e961]
+                    - generic [ref=e963]:
+                      - generic [ref=e965]:
+                        - img [ref=e966]
+                        - generic [ref=e969]: in 3 days
+                      - img "User 162" [ref=e973]
+                - button "HIGH api dummy Take a class at local community center that interests you Task from DummyJSON API - User 65 Progress 100% in 3 days User 65" [ref=e974]:
+                  - generic [ref=e976]:
+                    - generic [ref=e978]:
+                      - generic [ref=e979]:
+                        - generic [ref=e980]:
+                          - generic [ref=e981]: HIGH
+                          - generic [ref=e982]: api
+                          - generic [ref=e983]: dummy
+                        - heading "Take a class at local community center that interests you" [level=3] [ref=e984]
+                        - paragraph [ref=e985]: Task from DummyJSON API - User 65
+                      - button [ref=e986]:
+                        - img
+                    - generic [ref=e987]:
+                      - generic [ref=e988]:
+                        - generic [ref=e989]: Progress
+                        - generic [ref=e990]: 100%
+                      - progressbar [ref=e991]
+                    - generic [ref=e993]:
+                      - generic [ref=e995]:
+                        - img [ref=e996]
+                        - generic [ref=e999]: in 3 days
+                      - img "User 65" [ref=e1003]
+                - button "HIGH api dummy Improve touch typing Task from DummyJSON API - User 178 Progress 100% in 13 days User 178" [ref=e1004]:
+                  - generic [ref=e1006]:
+                    - generic [ref=e1008]:
+                      - generic [ref=e1009]:
+                        - generic [ref=e1010]:
+                          - generic [ref=e1011]: HIGH
+                          - generic [ref=e1012]: api
+                          - generic [ref=e1013]: dummy
+                        - heading "Improve touch typing" [level=3] [ref=e1014]
+                        - paragraph [ref=e1015]: Task from DummyJSON API - User 178
+                      - button [ref=e1016]:
+                        - img
+                    - generic [ref=e1017]:
+                      - generic [ref=e1018]:
+                        - generic [ref=e1019]: Progress
+                        - generic [ref=e1020]: 100%
+                      - progressbar [ref=e1021]
+                    - generic [ref=e1023]:
+                      - generic [ref=e1025]:
+                        - img [ref=e1026]
+                        - generic [ref=e1029]: in 13 days
+                      - img "User 178" [ref=e1033]
+                - button "HIGH api dummy Have a photo session with some friends Task from DummyJSON API - User 91 Progress 100% in 10 days User 91" [ref=e1034]:
+                  - generic [ref=e1036]:
+                    - generic [ref=e1038]:
+                      - generic [ref=e1039]:
+                        - generic [ref=e1040]:
+                          - generic [ref=e1041]: HIGH
+                          - generic [ref=e1042]: api
+                          - generic [ref=e1043]: dummy
+                        - heading "Have a photo session with some friends" [level=3] [ref=e1044]
+                        - paragraph [ref=e1045]: Task from DummyJSON API - User 91
+                      - button [ref=e1046]:
+                        - img
+                    - generic [ref=e1047]:
+                      - generic [ref=e1048]:
+                        - generic [ref=e1049]: Progress
+                        - generic [ref=e1050]: 100%
+                      - progressbar [ref=e1051]
+                    - generic [ref=e1053]:
+                      - generic [ref=e1055]:
+                        - img [ref=e1056]
+                        - generic [ref=e1059]: in 10 days
+                      - img "User 91" [ref=e1063]
+          - generic [ref=e1067]:
+            - generic [ref=e1069]:
+              - generic [ref=e1070]:
+                - generic [ref=e1071]:
+                  - generic [ref=e1072]: LOW
+                  - generic [ref=e1073]: api
+                  - generic [ref=e1074]: dummy
+                - heading "Watch a classic movie" [level=3] [ref=e1075]
+                - paragraph [ref=e1076]: Task from DummyJSON API - User 68
+              - button [ref=e1077]:
+                - img
+            - generic [ref=e1078]:
+              - generic [ref=e1079]:
+                - generic [ref=e1080]: Progress
+                - generic [ref=e1081]: 0%
+              - progressbar [ref=e1082]
+            - generic [ref=e1084]:
+              - generic [ref=e1086]:
+                - img [ref=e1087]
+                - generic [ref=e1090]: in 14 days
+              - img "User 68" [ref=e1094]
+          - status [ref=e1095]: Draggable item 3 was moved over droppable area 13.
+```
