@@ -120,13 +120,19 @@ jobs:
         run: yarn build
 
       - name: Start preview server
-        run: npx vite preview --port 5173 &
+        run: npx vite preview --port 5173 --strictPort & echo $! > vite-preview.pid
 
       - name: Wait for preview server
         run: npx wait-on http://localhost:5173 --timeout 60000
 
       - name: Run E2E tests
         run: yarn test:e2e
+
+      - name: Cleanup servers
+        if: always()
+        run: |
+          kill $(cat json-server.pid) || true
+          kill $(cat vite-preview.pid) || true
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
